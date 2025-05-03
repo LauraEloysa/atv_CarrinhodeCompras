@@ -1,2 +1,82 @@
 @import './base.css';
 
+main a {
+    text-decoration: none;
+  }
+  
+  main ul li {
+    list-style-type: none;
+  }
+  
+  header {
+    border-bottom: solid #4a88cb 1.5px;
+  }
+  
+  header div {
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw 5vw;
+  }
+  
+  header ul {
+    display: flex;
+    align-items: center;
+    width: 30%;
+  }
+  
+  header .logo li {
+    margin-right: 1vw;
+  }
+  header .menus li a:hover{
+    transition: 0.5s;
+    color: #4a88cb;
+  }
+  header ul li.borderBlueEndColor {
+    margin-right: 1vw;
+    padding-left: 1vw;
+    border-left: #4a88cb solid 2px;
+    font-size: small;
+    color: #4a88cb;
+  }
+  
+  header input {
+    border: none;
+    background-color: #dce8f5;
+    padding: 0.4vw 10vw 0.4vw 1vw;
+    position: relative;
+    margin-right: 2vw;
+    border-radius: 3px;
+  }
+  
+  header .iconePesquisa {
+    position: absolute;
+    margin-left: 2vw;
+    bottom: 45.2vw;
+    left: 44vw;
+    color: #2e649e;
+  }
+  
+  header .menus {
+    margin-right: 3vw;
+  
+  }
+  
+  header .menus li a {
+    margin-right: 3vw;
+    color: #7B7881;
+  }
+  
+  header .Icones {
+    margin-left: -4vw;
+  }
+  
+  header .Icones li {
+    border-left: #4a88cb solid 2px;
+    padding-left: 2vw;
+    margin-right: 2vw;
+    color: #4a88cb;
+  }
+  
+  header .Icones li.carrinho {
+    border: none;
+  }
