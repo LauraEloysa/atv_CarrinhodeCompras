@@ -80,3 +80,58 @@ main a {
   header .Icones li.carrinho {
     border: none;
   }
+
+  footer{
+    background-color: #4a88cb;
+    color: white;
+    margin-top: 4vw;
+  }
+  footer .footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 3vw 12vw;
+  }
+  footer ul{
+    list-style-type: none;
+}
+  footer ul li{
+    display: flex;
+  }
+  footer .redesSociais ul{
+    margin-left: -2.5vw;
+  } 
+  footer .redesSociais p{
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+  footer .redesSociais li{
+    font-size: 2rem;
+    margin-right: 1vw;
+    margin-top: 1vw;
+  }
+  footer .contato p{
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+  footer .contato ul.telefone li{
+    margin-left: -2.5vw;
+    align-items: center;
+    margin-top: 1vw;
+    font-size: 1.02rem;
+  }
+  footer .contato ul.telefone p{
+    font-size: 1.04rem;
+    margin-left: 20px;
+    font-weight: 400;
+  }
+  footer .contato .cartoes li{
+    margin-left: -2.5vw;
+    margin-right: 3.5vw;
+    margin-top: 6vw;
+  }
+  footer .copy{
+    text-align: center;
+    border-top: white 1px solid;
+    padding: 1.5vw;
+    font-weight: 300;
+  }
