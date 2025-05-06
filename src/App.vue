@@ -7,8 +7,7 @@ const inputValue = ref('')
 function limparInput() {
   inputValue.value = ''
 }
-const valorBooleano = ref(false);
-const boleanoFavoritos = ref(true);
+const telaAtual = ref('loja');
 
 const listaLivros = ref(
   [
@@ -203,12 +202,14 @@ function decrementar(index) {
         </ul>
 
         <ul class="Icones">
-          <li class="carrinho">
-            <FontAwesomeIcon icon="cart-shopping" @click="valorBooleano = !valorBooleano" />
+          <li class="carrinho"  style="display: flex; align-items: center;">
+            <FontAwesomeIcon icon="cart-shopping" @click="telaAtual = 'carrinho'" style="margin-right: 10px;"/>
+            <p>{{ listaCarrinho.length }}</p>
           </li>
-          <li>
+          <li style="display: flex; align-items: center;">
             <FontAwesomeIcon icon="heart"
-              @click="valorBooleano = !valorBooleano, boleanoFavoritos != boleanoFavoritos" />
+            @click="telaAtual = 'favoritos'"  style="margin-right: 10px;"/>
+            <p>{{ favoritos.length }}</p>
           </li>
           <li>
             <FontAwesomeIcon icon="user" />
@@ -220,7 +221,7 @@ function decrementar(index) {
     </header>
 
     <body>
-      <div v-if="valorBooleano == false">
+      <div v-if="telaAtual === 'loja'">
         <section class="random" style="display: flex; align-items: center;">
           <div>
             <p class="autor">{{ livroEscolhido.autor }}</p>
@@ -274,7 +275,6 @@ function decrementar(index) {
                   style="cursor: pointer; margin-left: 1rem; color: #2e649e; margin-left: 10.5rem;" />
 
               </div>
-
               <button @click="adicionarCarrinho(livro)"
                 :class="listaCarrinho.some(item => item.id === livro.id) ? 'btn-adicionado' : 'btn-comprar'">
                 <FontAwesomeIcon icon="cart-shopping" />
@@ -285,19 +285,19 @@ function decrementar(index) {
         </section>
       </div>
 
-      <div v-if="listaCarrinho.length == 0 && valorBooleano" class="carrinho-vazio"> 
+      <div v-if="listaCarrinho.length == 0 && telaAtual === 'carrinho'"class="carrinho-vazio"> 
         <p>
           <img src="https://cdn-icons-png.flaticon.com/512/11010/11010851.png" alt="Carrinho" width="120px">
         </p>
         <p style="font-size: 2.1rem; font-weight: 700; ">Seu carrinho está vazio</p>
        
         <p>
-          <button @click="valorBooleano = !valorBooleano">Voltar para a loja</button>
+          <button @click="telaAtual = 'loja'">Voltar para a loja</button>
         </p>
         
       </div>
 
-      <div v-if="valorBooleano == true && listaCarrinho.length > 0" style="display: flex;">
+      <div v-if="telaAtual === 'carrinho' && listaCarrinho.length > 0" style="display: flex;">
         <section class="carrinho">
           <h2><FontAwesomeIcon icon="truck" /> Seu Carrinho </h2>
           <ul>
@@ -337,7 +337,7 @@ function decrementar(index) {
               </div>
             </li>
           </ul>
-          <button class="paginaPrincipal" @click="valorBooleano = !valorBooleano">
+          <button class="paginaPrincipal" @click="telaAtual = 'loja'">
             Voltar para loja
           </button>
         </section>
@@ -364,7 +364,21 @@ function decrementar(index) {
           <button class="button" @click="limparInput">Inserir cupom</button>
         </section>
       </div>
-
+      <section v-if="favoritos.length == 0">
+        <p>Você não tem favoritos</p>
+      </section>
+      <section v-if="telaAtual === 'favoritos' && favoritos.length > 0" class="favoritos">
+  <h2> <span class="fa-solid fa-heart"></span> Meus Favoritos</h2>
+  <ul>
+    <li v-for="livro in listaLivros.filter(l => favoritos.includes(l.id))" :key="livro.id">
+      <img :src="livro.capa" alt="Capa" width="80" />
+      <p class="titulo">{{ livro.titulo }}</p>
+      <p class="autor">{{ livro.autor }}</p>
+      <p class="preco">R$ {{ livro.preco }}</p>
+    </li>
+  </ul>
+  <button @click="telaAtual = 'loja'">Voltar para loja</button>
+</section>    
     </body>
   </main>
   <footer>
@@ -590,5 +604,57 @@ section.valorTotal .button{
   border: none;
   padding: 7px 20px;
   border-radius: 5px;
+}
+section.favoritos{
+  margin: 3vw 12vw ;
+}
+section.favoritos ul{
+  display: flex;
+  flex-wrap: wrap; gap: 1.5rem; justify-content: center;
+}
+section.favoritos ul li{
+  text-align: left;
+  width: 19%;
+  margin-right: 2.4vw;
+  
+}
+section.favoritos h2{
+  color: #4a88cb;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-left: 2.4vw;
+  margin-bottom: 2vw;
+}
+section.favoritos span{
+  margin-right: 0.5vw;
+}
+section.favoritos ul li img{
+  flex: 1 1 400px;
+   width: 250px; 
+  height:350px;
+  margin-right: 2vw;
+}
+section.favoritos .titulo{
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 7px 0;
+  line-height: 120%;
+}
+section.favoritos .autor{
+  font-size: 0.9rem;
+  color: #4F4C57;
+  margin-bottom: 7px;
+}
+section.favoritos .preco{
+  font-size: 1.02rem;
+}
+section.favoritos button{
+  background-color: #4a88cb;
+  color: white;
+  margin-left: 2.4vw;
+  margin-top: 2vw;
+  font-size: 1.2rem;
+  border: none;
+  padding: 7px 20px;
 }
 </style>
