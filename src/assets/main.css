@@ -1,5 +1,8 @@
 @import './base.css';
 
+main button{
+  cursor: pointer;
+}
 main a {
     text-decoration: none;
   }

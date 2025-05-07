@@ -202,13 +202,12 @@ function decrementar(index) {
         </ul>
 
         <ul class="Icones">
-          <li class="carrinho"  style="display: flex; align-items: center;">
-            <FontAwesomeIcon icon="cart-shopping" @click="telaAtual = 'carrinho'" style="margin-right: 10px;"/>
+          <li class="carrinho" style="display: flex; align-items: center;">
+            <FontAwesomeIcon icon="cart-shopping" @click="telaAtual = 'carrinho'" style="margin-right: 10px; cursor: pointer;" />
             <p>{{ listaCarrinho.length }}</p>
           </li>
           <li style="display: flex; align-items: center;">
-            <FontAwesomeIcon icon="heart"
-            @click="telaAtual = 'favoritos'"  style="margin-right: 10px;"/>
+            <FontAwesomeIcon icon="heart" @click="telaAtual = 'favoritos'" style="margin-right: 10px; cursor: pointer;" />
             <p>{{ favoritos.length }}</p>
           </li>
           <li>
@@ -262,7 +261,7 @@ function decrementar(index) {
               <img :src="livro.capa" alt="#" style="flex: 1 1 400px; width: 250px; height:350px; ">
 
               <p style="justify-items: left; white-space: pre-line; font-weight: 600;font-size: 1.1rem;">{{ livro.titulo
-                }}</p>
+              }}</p>
 
               <p style="color: #4F4C57; font-weight: 400; font-size: 0.9rem; margin-top: 0.2vw;">{{ livro.autor }}</p>
 
@@ -276,7 +275,8 @@ function decrementar(index) {
 
               </div>
               <button @click="adicionarCarrinho(livro)"
-                :class="listaCarrinho.some(item => item.id === livro.id) ? 'btn-adicionado' : 'btn-comprar'">
+                :class="listaCarrinho.some(item => item.id === livro.id) ? 'btn-adicionado' : 'btn-comprar'"
+                style="cursor: pointer;">
                 <FontAwesomeIcon icon="cart-shopping" />
                 {{listaCarrinho.some(item => item.id === livro.id) ? 'Adicionado' : 'Comprar'}}
               </button>
@@ -285,21 +285,23 @@ function decrementar(index) {
         </section>
       </div>
 
-      <div v-if="listaCarrinho.length == 0 && telaAtual === 'carrinho'"class="carrinho-vazio"> 
+      <div v-if="listaCarrinho.length == 0 && telaAtual === 'carrinho'" class="carrinho-vazio">
         <p>
           <img src="https://cdn-icons-png.flaticon.com/512/11010/11010851.png" alt="Carrinho" width="120px">
         </p>
         <p style="font-size: 2.1rem; font-weight: 700; ">Seu carrinho está vazio</p>
-       
+
         <p>
           <button @click="telaAtual = 'loja'">Voltar para a loja</button>
         </p>
-        
+
       </div>
 
       <div v-if="telaAtual === 'carrinho' && listaCarrinho.length > 0" style="display: flex;">
         <section class="carrinho">
-          <h2><FontAwesomeIcon icon="truck" /> Seu Carrinho </h2>
+          <h2>
+            <FontAwesomeIcon icon="truck" /> Seu Carrinho
+          </h2>
           <ul>
 
             <li v-for="(book, index) in listaCarrinho" :key="index" style="display: flex; align-items: center;">
@@ -344,69 +346,75 @@ function decrementar(index) {
         <section class="valorTotal">
           <div class="principal">
             <h2 style="font-weight: 600;">Total da compra:</h2>
-          <div>
-            <p class="espacoMaior">Produtos</p>
-            <p> R$ {{ listaCarrinho.reduce((soma, book)=> soma + book.preco * book.contador, 0).toFixed(2) }}</p>
+            <div>
+              <p class="espacoMaior">Produtos</p>
+              <p> R$ {{listaCarrinho.reduce((soma, book) => soma + book.preco * book.contador, 0).toFixed(2)}}</p>
+            </div>
+            <div>
+              <p class="espacoMaior">Frete</p>
+              <p>Grátis</p>
+            </div>
+            <div class="semBorder">
+              <p class="espacoMaior">Total</p>
+              <p> R$ {{listaCarrinho.reduce((soma, book) => soma + book.preco * book.contador, 0).toFixed(2)}}</p>
+            </div>
+            <div class="semBorder">
+              <button class="pagamento">Ir para pagamento</button>
+            </div>
           </div>
-          <div>
-            <p class="espacoMaior">Frete</p>
-            <p>Grátis</p>
-          </div>
-          <div class="semBorder">
-            <p class="espacoMaior">Total</p>
-            <p> R$ {{ listaCarrinho.reduce((soma, book)=> soma + book.preco * book.contador, 0).toFixed(2) }}</p>
-          </div>
-          <div class="semBorder">
-            <button class="pagamento">Ir para pagamento</button>
-          </div>
-          </div>
-          <input type="text"  v-model="inputValue" placeholder="Código do cupon">
+          <input type="text" v-model="inputValue" placeholder="Código do cupon">
           <button class="button" @click="limparInput">Inserir cupom</button>
         </section>
       </div>
-      <section v-if="favoritos.length == 0">
-        <p>Você não tem favoritos</p>
+
+      <section v-if="telaAtual === 'favoritos' && favoritos.length == 0" class="favoritosVazio">
+        <p>Você ainda não tem favoritos</p>
+        <font-awesome-icon :icon="['fas', 'heart-crack']" style="color: #2e649e; font-size: 2.3rem;"/>
+        <p><button @click="telaAtual = 'loja'"> Volta para loja</button></p>
       </section>
       <section v-if="telaAtual === 'favoritos' && favoritos.length > 0" class="favoritos">
-  <h2> <span class="fa-solid fa-heart"></span> Meus Favoritos</h2>
-  <ul>
-    <li v-for="livro in listaLivros.filter(l => favoritos.includes(l.id))" :key="livro.id">
-      <img :src="livro.capa" alt="Capa" width="80" />
-      <p class="titulo">{{ livro.titulo }}</p>
-      <p class="autor">{{ livro.autor }}</p>
-      <p class="preco">R$ {{ livro.preco }}</p>
-    </li>
-  </ul>
-  <button @click="telaAtual = 'loja'">Voltar para loja</button>
-</section>    
+        <h2> <span class="fa-solid fa-heart"></span> Meus Favoritos</h2>
+        <ul>
+          <li v-for="livro in listaLivros.filter(l => favoritos.includes(l.id))" :key="livro.id">
+            <img :src="livro.capa" alt="Capa" width="80" />
+            <p class="titulo">{{ livro.titulo }}</p>
+            <p class="autor">{{ livro.autor }}</p>
+            <p class="preco">R$ {{ livro.preco }}</p>
+          </li>
+        </ul>
+        <button @click="telaAtual = 'loja'">Voltar para loja</button>
+      </section>
     </body>
   </main>
   <footer>
     <div class="footer">
       <div class="redesSociais">
-      <p>Mundo Literário</p>
-      <ul style="display: flex;">
-      <li><span class="fa-brands fa-square-facebook"></span></li>
-      <li><span class="fa-brands fa-instagram"></span></li>
-      <li><span class="fa-brands fa-square-twitter"></span></li>
-    </ul>
-    </div>
-    <div class="contato">
-      <p>Contato</p>
-      <ul class="telefone">
-        <li><font-awesome-icon icon="phone" />
-        <p>+55 47 40045263</p></li>
-        <li><span class="fa-solid fa-clock"></span>
-        <p>8h às 23h - Seg a Sex</p></li>
-        <li><span class="fa-solid fa-envelope"></span>
-        <p>contato@mundoliterario.com</p></li>
-      </ul>
-      <ul style="display: flex;" class="cartoes">
-        <li><img src="/image/Paypal.png" alt=""></li>
-        <li><img src="/image/Mastercard.png" alt=""></li>
-        <li><img src="/image/VISA.png" alt=""></li>
-      </ul>
-    </div>
+        <p>Mundo Literário</p>
+        <ul style="display: flex;">
+          <li><span class="fa-brands fa-square-facebook"></span></li>
+          <li><span class="fa-brands fa-instagram"></span></li>
+          <li><span class="fa-brands fa-square-twitter"></span></li>
+        </ul>
+      </div>
+      <div class="contato">
+        <p>Contato</p>
+        <ul class="telefone">
+          <li><font-awesome-icon icon="phone" />
+            <p>+55 47 40045263</p>
+          </li>
+          <li><span class="fa-solid fa-clock"></span>
+            <p>8h às 23h - Seg a Sex</p>
+          </li>
+          <li><span class="fa-solid fa-envelope"></span>
+            <p>contato@mundoliterario.com</p>
+          </li>
+        </ul>
+        <ul style="display: flex;" class="cartoes">
+          <li><img src="/image/Paypal.png" alt=""></li>
+          <li><img src="/image/Mastercard.png" alt=""></li>
+          <li><img src="/image/VISA.png" alt=""></li>
+        </ul>
+      </div>
     </div>
     <div class="copy">
       <p>&copy; Alguns direitos reservados. Mundo Literário 2025. </p>
@@ -496,7 +504,8 @@ section.livros button.btn-adicionado {
   background-color: #28a745;
   padding: 0.5vw 5.5vw;
 }
-div.carrinho-vazio{
+
+div.carrinho-vazio {
   text-align: center;
   align-items: center;
   background-color: #70a1d63b;
@@ -504,7 +513,8 @@ div.carrinho-vazio{
   margin: 5vw 2vw 0 2vw;
   padding: 10vw 0;
 }
-div.carrinho-vazio button{
+
+div.carrinho-vazio button {
   background-color: #4a88cb;
   border: none;
   font-size: 1.1rem;
@@ -513,6 +523,7 @@ div.carrinho-vazio button{
   border-radius: 5px;
   margin-top: 1vw;
 }
+
 section.carrinho li {
   width: 90%;
   border-bottom: #4a88cb solid 2px;
@@ -550,105 +561,127 @@ section.carrinho .lado {
   min-width: 60px;
   text-align: left;
 }
-section.carrinho h2{
+
+section.carrinho h2 {
   font-size: 2rem;
   font-weight: 600;
   color: #4a88cb;
   margin: 2vw 0 2vw 3vw;
 }
-section.carrinho button.paginaPrincipal{
+
+section.carrinho button.paginaPrincipal {
   background-color: #4a88cb;
   color: white;
-  border:  none;
+  border: none;
   padding: 5px 15px;
   font-size: 1.03rem;
   margin: 2vw 0 2vw 2.5vw;
 }
-section.valorTotal{
+
+section.valorTotal {
   margin: auto;
 }
-section.valorTotal div.principal{
+
+section.valorTotal div.principal {
   border: #4F4C57 solid 2px;
   border-radius: 5px;
   padding: 2vw;
 }
-section.valorTotal div.principal div{
+
+section.valorTotal div.principal div {
   display: flex;
   justify-content: space-between;
   border-bottom: #4a88cb solid 2px;
   margin-top: 2vw;
   margin-bottom: 0.5vw;
 }
-section.valorTotal .espacoMaior{
+
+section.valorTotal .espacoMaior {
   margin-right: 10vw;
 }
-section.valorTotal .semBorder{
+
+section.valorTotal .semBorder {
   border: none;
 }
-section.valorTotal input{
+
+section.valorTotal input {
   margin: 1.5vw 1vw 0 0;
-  background-color:  #dce8f5;
+  background-color: #dce8f5;
   border: none;
   padding: 7px 40px 7px 15px;
   border-radius: 5px;
 }
-section.valorTotal .pagamento{
+
+section.valorTotal .pagamento {
   background-color: #4a88cb;
   border: none;
   color: white;
   padding: 7px 90px;
 }
-section.valorTotal .button{
+
+section.valorTotal .button {
   background-color: #4a88cb;
   color: white;
   border: none;
   padding: 7px 20px;
   border-radius: 5px;
 }
-section.favoritos{
-  margin: 3vw 12vw ;
+
+section.favoritos {
+  margin: 3vw 12vw;
 }
-section.favoritos ul{
+
+section.favoritos ul {
   display: flex;
-  flex-wrap: wrap; gap: 1.5rem; justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
 }
-section.favoritos ul li{
+
+section.favoritos ul li {
   text-align: left;
   width: 19%;
   margin-right: 2.4vw;
-  
+
 }
-section.favoritos h2{
+
+section.favoritos h2 {
   color: #4a88cb;
   font-size: 2rem;
   font-weight: 600;
   margin-left: 2.4vw;
   margin-bottom: 2vw;
 }
-section.favoritos span{
+
+section.favoritos span {
   margin-right: 0.5vw;
 }
-section.favoritos ul li img{
+
+section.favoritos ul li img {
   flex: 1 1 400px;
-   width: 250px; 
-  height:350px;
+  width: 250px;
+  height: 350px;
   margin-right: 2vw;
 }
-section.favoritos .titulo{
+
+section.favoritos .titulo {
   font-size: 1.05rem;
   font-weight: 600;
   margin: 7px 0;
   line-height: 120%;
 }
-section.favoritos .autor{
+
+section.favoritos .autor {
   font-size: 0.9rem;
   color: #4F4C57;
   margin-bottom: 7px;
 }
-section.favoritos .preco{
+
+section.favoritos .preco {
   font-size: 1.02rem;
 }
-section.favoritos button{
+
+section.favoritos button {
   background-color: #4a88cb;
   color: white;
   margin-left: 2.4vw;
@@ -656,5 +689,26 @@ section.favoritos button{
   font-size: 1.2rem;
   border: none;
   padding: 7px 20px;
+}
+section.favoritosVazio {
+  background-color: #4a88cb39;
+  text-align: center;
+  margin: 5vw;
+  padding: 10vw;
+  border-radius: 20px;
+}
+section.favoritosVazio p{
+  font-size: 2rem;
+  color: #4F4C57;
+  font-weight: 700; 
+  margin-bottom: 1.5vw;
+  margin-top: 1vw;
+}
+section.favoritosVazio button{
+  background-color: #4a88cb;
+  border: none;
+  color: white;
+  padding: 7px 30px;
+  font-size: 1.04rem;
 }
 </style>
