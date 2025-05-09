@@ -15,7 +15,7 @@ const listaLivros = ref(
       id: 1,
       titulo: 'O Príncipe Cruel',
       resumo: 'O Príncipe Cruel, de Holly Black, é um romance de fantasia que acompanha uma garota humana vivendo entre fadas perigosas, onde precisa lutar por respeito e poder. A trama explora intrigas políticas, jogos de poder e amadurecimento em um mundo mágico e traiçoeiro.',
-      resenha: 'Primeiro livro da mais nova série de Holly Black. Conheça a impressionante história de uma garota mortal que se vê presa em uma teia de intrigas reais. Jude tinha 7 anos quando seus pais foram assassinados e foi forçada a viver no Reino das Fadas. Dez anos depois, tudo o que ela quer é ser como eles – lindos e imortais – e realmente pertencer ao Reino das Fadas, apesar de sua mortalidade. Mas muitos do povo das Fadas desprezam os humanos. Especialmente o Príncipe Cardan, o filho mais jovem, mais bonito e mais cruel do Grande Rei. Para ganhar um lugar na Alta Corte, ela deve desafiá-lo... e enfrentar as consequências. Envolvida em intrigas e traições do palácio, Jude descobre sua própria capacidade para truques e derramamento de sangue. Mas, com a ameaça de uma guerra civil e o Reino das Fadas por um fio, Jude precisará arriscar sua vida em uma perigosa aliança para salvar suas irmãs, e o próprio Reino. Com personagens únicos, reviravoltas inesperadas, e uma traição de tirar o fôlego, este livro vai deixar o leitor pedindo bis – querendo mergulhar de cabeça na continuação deste universo.',
+      resenha: 'Jude tinha apenas sete anos quando seus pais foram assassinados e ela, junto com suas irmãs, foi levada para viver na perigosa e encantadora Corte das Fadas. Apesar de ser humana, Jude deseja desesperadamente pertencer àquele mundo — mesmo sabendo que os feéricos desprezam mortais como ela. Entre eles, o príncipe Cardan se destaca por sua beleza cruel e por tornar a vida de Jude ainda mais difícil. No entanto, ela não se intimida. Determinada a conquistar seu lugar, Jude se envolve em intrigas políticas, jogos de poder e traições, mergulhando cada vez mais fundo no lado sombrio da corte. À medida que aprende a jogar o jogo deles, percebe que ser implacável pode ser sua única chance de sobreviver.',
       preco: 47.92,
       capa: '/image/OPrincipeCruel.jpg',
       autor: 'Holly Black',
@@ -25,7 +25,7 @@ const listaLivros = ref(
       id: 2,
       titulo: 'O Rei Perverso',
       resumo: 'O Rei Perverso, de Holly Black, continua a história de Jude Duarte, agora poderosa na corte das fadas, enquanto ela manipula jogos políticos para manter o rei Cardan sob seu controle. No entanto, traições e segredos ameaçam sua posição e seu coração.',
-      resenha: 'Para sobreviver no Reino das Fadas, Jude Duarte precisou aprender muitas lições. A mais importante delas veio de seu padrasto: o poder é bem mais fácil de adquirir do que de manter. Ela achou que, depois de enganar Cardan para que ele jurasse obedecê-la por um ano e um dia, sua vida se tornaria mais fácil. Mas ter qualquer influência sobre o Grande Rei de Elfhame parece uma tarefa impossível, principalmente quando ele faz de tudo em seu poder para humilhá-la e prejudicá-la, mesmo que seu fascínio pela garota humana permaneça intacto. Agora, com as ondas ameaçando engolir a terra e um alerta de traição iminente, Jude precisa lutar para salvar a própria vida e a daqueles que ama, além de lutar contra seus sentimentos conflituosos por Cardan no meio-tempo. Em um mundo imortal, um ano e um dia não são nada...',
+      resenha: 'Depois dos eventos de O Príncipe Cruel, Jude se vê em uma posição delicada: agora, ela detém o controle sobre o trono de Elfhame, manipulando o recém-coroado rei Cardan nos bastidores. Mesmo com o poder nas mãos, sua posição é frágil, pois traições e conspirações cercam a corte feérica. Jude precisa manter o controle político ao mesmo tempo em que lida com sua relação complexa com Cardan — intensa, instável e cheia de ressentimentos. Em meio a jogos de manipulação, alianças perigosas e segredos reveladores, Jude descobre que governar pode ser ainda mais perigoso do que conquistar o trono. Neste segundo volume, Holly Black aprofunda a tensão e a intriga, mantendo o leitor preso à trama do início ao fim.',
       preco: 47.84,
       capa: 'public/image/OReiPerverso.jpg',
       autor: 'Holly Black',
@@ -35,7 +35,7 @@ const listaLivros = ref(
       id: 3,
       titulo: 'A Rainha do Nada',
       resumo: 'A Rainha do Nada, de Holly Black, conclui a trilogia com Jude retornando ao mundo das fadas após ser exilada, determinada a recuperar seu poder e proteger aqueles que ama. Enfrentando guerras, alianças instáveis e seu amor por Cardan, ela descobre sua verdadeira força.',
-      resenha: 'Ele será a destruição da coroa e a ruína do trono.O poder é mais fácil de adquirir do que de manter. Jude aprendeu a lição mais difícil de sua vida quando abdicou do controle do Rei Cardan em troca de um poder imensurável.Agora, ela carrega o outrora impensável título de Grande Rainha de Elfhame, mas as condições são longe de ser ideais. Exilada por Cardan no mundo mortal, Jude se encontra impotente e frustrada enquanto planeja reivindicar tudo que Cardan tomou dela.A oportunidade surge com sua irmã gêmea, cuja vida está em perigo. Para salvá-la de uma situação tenebrosa envolvendo Locke, Jude decide voltar ao Reino das Fadas se passando por Taryn. Antes disso, porém, ela precisa confrontar os próprios sentimentos contraditórios pelo rei que a traiu.No entanto, ao voltar a Elfhame, Jude constata que tudo mudou. A guerra está prestes a eclodir, e ela caminha próximo a seus inimigos. Será que ela vai ser capaz de resgatar a Coroa e o amor incondicional de Cardan, ao mesmo tempo que destrói os planos de seus inimigos? Ou será que tudo está perdido para sempre?',
+      resenha: 'Ele será a destruição da coroa e a ruína do trono. Jude aprendeu que conquistar poder é fácil, mas mantê-lo é outra história. Após abrir mão do controle sobre o Rei Cardan em troca de poder, ela se tornou a Grande Rainha de Elfhame — mas vive exilada no mundo mortal, impotente e cheia de ressentimento. Quando sua irmã gêmea, Taryn, se vê em perigo por causa de Locke, Jude vê uma chance de agir: decide voltar ao Reino das Fadas fingindo ser Taryn. Para isso, precisa encarar seus sentimentos conflitantes por Cardan, o rei que a traiu. Em Elfhame, tudo mudou. A guerra está prestes a começar, e inimigos se aproximam. Jude terá que enfrentar conspirações, perigos e seu próprio coração. Será capaz de recuperar a coroa e o amor de Cardan? Ou perderá tudo?',
       preco: 43.65,
       capa: 'public/image/ARainhadoNada.jpg',
       autor: 'Holly Black',
@@ -45,7 +45,7 @@ const listaLivros = ref(
       id: 4,
       titulo: 'O canto mais escuro da floresta',
       resumo: 'Em Fairfold, humanos e fadas convivem, mas há perigos escondidos nas florestas. Hazel e seu irmão sempre imaginaram proteger o misterioso garoto de chifres adormecido. Quando ele desperta, segredos sombrios vêm à tona, e Hazel precisa virar a heroína que fingia ser na infância.',
-      resenha: 'Hazel e seu irmão, Ben, moram em Fairfold, uma cidade onde humanos e o Povo do Ar convivem pacificamente. Turistas visitam o lugar para testemunhar as maravilhas do Povo e o elemento mais maravilhoso ali, o garoto de chifres. Mas os visitantes nunca conseguem ver o perigo daquelas árvores.Desde crianças, Hazel e Ben criam histórias sobre o garoto no caixão de vidro. Que ele é um príncipe e os dois são cavaleiros em sua guarda. Fingem e esperam, de todo o coração, que seu príncipe seja diferente das outras fadas, que fazem acordos cruéis, escondem-se nas sombras das árvores e amaldiçoam turistas...Mas, à medida que cresce, Hazel vai deixando as histórias de lado. Ela sabe que o garoto de chifres nunca irá acordar.E então, um dia... ele acorda.E tudo vira de cabeça para baixo. Hazel precisa se tornar o cavaleiro que um dia fingiu ser. Numa história de amor puro, lealdades que não se revelam e a pontada ferina da traição, a garota e seu irmão se perguntam se a coragem dos tempos de infância será suficiente para salvá-los.',
+      resenha: 'Hazel e seu irmão, Ben, vivem em Fairfold, onde humanos e o Povo do Ar coexistem em uma paz frágil. Turistas visitam a cidade para ver o garoto de chifres adormecido em um caixão de vidro, sem perceber o perigo escondido nas florestas. Desde pequenos, Hazel e Ben imaginam que ele é um príncipe encantado, e que são seus cavaleiros protetores. Mas, com o tempo, Hazel abandona essas fantasias, certa de que ele jamais despertará. Até que, um dia, ele acorda — e tudo muda. Criaturas antigas se agitam, segredos vêm à tona, e Hazel se vê forçada a enfrentar perigos reais. Agora, ela precisa se tornar a heroína que um dia fingiu ser. Em meio a magia, pactos sombrios e traições, Hazel e Ben descobrem que as histórias que contavam na infância podem ter sido mais reais do que imaginavam — e que talvez a coragem de antes seja a única esperança de sobrevivência.',
       preco: 35.15,
       capa: 'public/image/OCantoMaisEscuro.jpg',
       autor: 'Holly Black',
@@ -55,7 +55,7 @@ const listaLivros = ref(
       id: 5,
       titulo: 'Os dois morrem no final',
       resumo: '"Os Dois Morrem no Final" é um romance tocante que mostra como um único dia pode transformar tudo. Dois jovens desconhecidos se encontram para viver suas últimas 24 horas de forma inesquecível. Uma história sobre conexão, coragem e aproveitar cada segundo.',
-      resenha: 'No dia 5 de setembro, pouco depois da meia-noite, Mateo Torrez e Rufus Emeterio recebem uma ligação da Central da Morte. A notícia é devastadora: eles vão morrerquele mesmo dia.Os dois não se conhecem, mas, por motivos diferentes, estão à procura de um amigo com quem compartilhar os últimos momentos, uma conexão verdadeira que ajude a diminuir um pouco a angústia e a solidão que sentem. Por sorte, existe um aplicativo para isso, e é graças a ele que Rufus e Mateo vão se encontrar para uma última grande aventura: viver uma vida inteira em um único dia.Uma história sensível e emocionante, Os dois morrem no final nos lembra o que significa estar vivo. Com seu olhar único, Adam Silvera mostra que cada segundo importa, e mesmo que não haja vida sem morte, nem amor sem perda, tudo pode mudar em 24 horas.',
+      resenha: 'Imagine receber uma ligação informando que você vai morrer nas próximas 24 horas. É isso que acontece com Mateo e Rufus, dois jovens completamente diferentes, mas unidos pelo mesmo destino. Ambos são avisados pela Central da Morte que seu fim está próximo. Sem querer passar seu último dia sozinhos, eles se conectam por meio de um aplicativo chamado Último Amigo. Juntos, decidem viver intensamente suas últimas horas, explorando a cidade, compartilhando medos, sonhos e descobertas. Ao longo dessa jornada emocionante e cheia de humanidade, uma amizade inesperada se transforma em algo mais profundo. Uma história sobre como a vida pode ser bela mesmo diante do fim.',
       preco: 32.94,
       capa: 'public/image/OsDoisMorremNoFinal.jpg',
       autor: 'Adam Silveira',
@@ -65,7 +65,7 @@ const listaLivros = ref(
       id: 6,
       titulo: ' O primeiro a morrer no final',
       resumo: '"O Primeiro a Morrer no Final" é um emocionante prelúdio de "Os Dois Morrem no Final". Dois garotos se conhecem no dia em que a Central da Morte inicia seus alertas, e uma ligação pode mudar tudo. Uma narrativa intensa sobre destino, amor e o valor de viver o agora.',
-      resenha: 'Na noite de 30 de julho de 2010, as pessoas se reúnem em diversas cidades dos Estados Unidos para a inauguração da Central da Morte, um serviço controverso capaz de informar se seus usuários terão um encontro prematuro com a morte ao longo das próximas 24 horas.Orion Pagan espera há anos que alguém lhe diga quando vai morrer. Só assim ele conseguirá aproveitar um pouco a vida, sem o temor de não saber quando a doença grave que tem no coração o fará partir dessa para a melhor.Receber uma ligação da Central da Morte é a última coisa que Valentino Prince deseja. Após deixar o Arizona e se mudar para Nova York, ele mal pode esperar para viver esse novo capítulo de sua história e realizar seus sonhos.Sob as luzes da Times Square, Orion e Valentino se conhecem, e a conexão entre eles é imediata. Mas, à meia-noite, a primeira ligação da Central da Morte anuncia que um dos dois vai morrer em breve. Embora não saibam como — ou quando — o dia vai terminar, eles só têm uma certeza: querem ficar juntos até o fim.',
+      resenha: 'Na noite de 30 de julho de 2010, pessoas se reúnem em várias cidades dos EUA para a estreia da Central da Morte, um serviço que avisa se alguém vai morrer nas próximas 24 horas. Orion Pagan espera por isso há anos — convive com uma grave doença cardíaca e quer saber quando sua hora chegará para, enfim, viver sem medo. Já Valentino Prince, recém-chegado a Nova York, quer apenas começar sua nova vida e realizar seus sonhos. Quando os dois se conhecem sob as luzes da Times Square, surge uma conexão imediata. Mas, à meia-noite, uma ligação da Central muda tudo: um deles vai morrer em breve. Sem saber quem, como ou quando, eles decidem viver esse dia intensamente. Unidos pelo acaso e pelo tempo incerto, Orion e Valentino enfrentam o destino, com a única certeza de que querem estar juntos até o fim.',
       preco: 40.02,
       capa: 'public/image/OPrimeiroAMorrerNoFinal.jpg',
       autor: 'Adam Silveira',
@@ -75,7 +75,7 @@ const listaLivros = ref(
       id: 7,
       titulo: 'Os Sete Maridos de Evelyn Hugo',
       resumo: 'Uma lendária estrela de Hollywood decide revelar os segredos por trás de sua carreira e seus sete casamentos. Para isso, escolhe uma jornalista iniciante, surpreendendo a todos. O livro explora fama, amores proibidos e decisões que moldam uma vida.',
-      resenha: 'Lendária estrela de Hollywood, Evelyn Hugo sempre esteve sob os holofotes ― seja estrelando uma produção vencedora do Oscar, protagonizando algum escândalo ou aparecendo com um novo marido… pela sétima vez. Agora, prestes a completar oitenta anos e reclusa em seu apartamento no Upper East Side, a famigerada atriz decide contar a própria história ― ou sua “verdadeira história” ―, mas com uma condição: que Monique Grant, jornalista iniciante e até então desconhecida, seja a entrevistadora. Ao embarcar nessa misteriosa empreitada, a jovem repórter começa a se dar conta de que nada é por acaso ― e que suas trajetórias podem estar profunda e irreversivelmente conectadas.',
+      resenha: 'Evelyn Hugo, lendária estrela de Hollywood, decide contar sua verdadeira história após décadas de fama, escândalos e segredos. Para isso, ela escolhe a jornalista iniciante Monique Grant, surpreendendo a todos. Conforme Evelyn revela detalhes íntimos de sua vida — incluindo os segredos por trás de seus sete casamentos —, Monique percebe que suas histórias estão mais entrelaçadas do que poderia imaginar. Entre glamour, amores proibidos e decisões difíceis, Evelyn narra sua luta por poder, identidade e amor em uma época que não permitia liberdade plena. Um romance poderoso sobre coragem, escolhas e o preço da fama, que nos faz repensar o que significa ser verdadeiro consigo mesmo.',
       preco: 33.91,
       capa: 'public/image/SeteMaridosDeEvelyn.jpg',
       autor: 'Taylor Jekkins Reid',
@@ -85,7 +85,7 @@ const listaLivros = ref(
       id: 8,
       titulo: 'De olho em você',
       resumo: 'Crystal Chen, influenciadora fora dos padrões do mundo fitness, encontra na academia seu refúgio após um término. Lá, cruza com Scott Ritchie, um bombeiro sarado e arrogante que desperta sua antipatia — e seu desejo. Entre disputas e provocações, os dois descobrem uma conexão inesperada. Para viver esse amor, Crystal terá que enfrentar preconceitos e reafirmar sua luta por autoestima e amor-próprio.',
-      resenha: 'Crystal Chen é uma influenciadora digital que tem o corpo fora do padrão e construiu a carreira lutando contra os estereótipos do mundo fitness. Após o fim do seu último namoro, ela está sem nenhuma paciência para os homens e seu único refúgio passa a ser a academia – seu templo de autoestima e positividade.Até que Scott Ritchie se matricula no mesmo lugar. Já no primeiro dia, o bombeiro sarado que exala arrogância – e gostosura – comete um pecado imperdoável: invade o aparelho preferido de Crystal antes que ela termine de usar e conquista sua antipatia imediata.Dia após dia, enquanto esses inimigos mortais e ultracompetitivos disputam o território da academia, as faíscas de desejo entre eles se multiplicam. Mesmo assim, a última coisa que eles esperam é se encontrar fora de seu campo de batalha diário e constatar que têm mais em comum do que achavam.Ao descobrir que dentro daquele peito musculoso bate um coração sensível, Crystal decide baixar a guarda. Mas antes de poder vivenciar plenamente essa paixão, ela precisa passar pelo teste de força mais importante de sua vida: enfrentar o preconceito e superar todos os obstáculos para continuar divulgando sua mensagem de amor-próprio.',
+      resenha: '"De Olho em Você" de Amy Lea é uma história encantadora que combina romance e autoestima. A protagonista, Crystal Chen, é uma influenciadora digital fora do padrão físico, que construiu sua carreira desafiando os estereótipos do mundo fitness. Após o fim de um namoro, ela encontra consolo na academia, onde sua vida vira de cabeça para baixo ao encontrar Scott Ritchie, um bombeiro sarado e arrogante. A rivalidade entre eles se intensifica, mas à medida que passam mais tempo juntos, descobrem que têm mais em comum do que imaginavam. Com temas de amor-próprio, superação de preconceitos e paixão inesperada, "De Olho em Você" é um romance envolvente e inspirador, perfeito para quem busca uma leitura leve, mas cheia de mensagens poderosas sobre autoestima e aceitação.',
       preco: 26.99,
       capa: 'public/image/DeOlhoEmVoce.jpg',
       autor: 'Amy Lea',
@@ -95,7 +95,7 @@ const listaLivros = ref(
       id: 9,
       titulo: 'Era uma vez um coração partido',
       resumo: 'Evangeline Raposa sempre acreditou em finais felizes, até ver o amor de sua vida prestes a se casar com outra. Desesperada, ela faz um perigoso acordo com Jacks, o sedutor e enigmático Príncipe de Copas: três beijos em troca de ajuda. Mas logo descobre que lidar com um imortal pode levá-la tanto ao seu conto de fadas quanto a uma tragédia inesquecível.',
-      resenha: 'Criada na loja de antiguidades de seu querido pai, cercada por lendas de seres poderosos e imortais, Evangeline Raposa cresceu acreditando em histórias de amores verdadeiros e em finais felizes. Mas essas crenças se veem abaladas quando a jovem descobre que o amor de sua vida está prestes a se casar com outra pessoa.Seu desespero é tamanho que ela aceita fazer um acordo com o harmoso e perverso Príncipe de Copas, famoso por seu poderio mítico. Dizem que seu beijo é tão encantador que vale a pena morrer por ele, e é justamente isso que o príncipe pede em troca: três beijos de Evangeline a serem dados no momento e no local escolhidos previamente.Logo, Evangeline descobre que negociar com um imortal é um jogo muito perigoso. Afinal, o Príncipe de Copas quer muito mais dela do que apenas beijos. Ele tem outros planos para a jovem, e tais intenções podem tanto se tornar o tão sonhado “felizes para sempre” quanto a mais requintada tragédia.',
+      resenha: 'Era uma vez um coração partido é o primeiro livro da nova série de Stephanie Garber, autora da trilogia Caraval. A história acompanha Evangeline Fox, uma jovem que, ao descobrir que seu grande amor irá se casar com sua irmã postiça, faz um pacto com o enigmático Príncipe de Copas para impedir o casamento. Em troca, ele exige três beijos dela, a serem dados em momentos e locais escolhidos por ele. O livro mistura romance, magia e reviravoltas emocionantes, criando uma narrativa envolvente que explora temas como amor verdadeiro, sacrifício e os perigos de negociar com seres imortais. Ideal para fãs de fantasia e romances com toques de conto de fadas modernos.',
       preco: 45.55,
       capa: 'public/image/EraUmaVez.jpg',
       autor: 'Stephanie Garber',
@@ -105,7 +105,7 @@ const listaLivros = ref(
       id: 10,
       titulo: 'A balada do felizes para nunca',
       resumo: 'Após ser traída por Jacks, Evangeline Raposa decide nunca mais confiar nele. No entanto, ao descobrir uma nova maldição, ela é forçada a se unir novamente ao Príncipe de Copas. Com um feitiço mortal em jogo e novos inimigos surgindo, Evangeline precisa decidir se ainda pode seguir seu coração — ou se ele será sua ruína.',
-      resenha: 'Após ser traída por Jacks, o Príncipe de Copas, Evangeline Raposa jura nunca mais confiar nele. Depois de ter descoberto a própria magia, ela acredita que poderá usá-la para restaurar sua chance de um “felizes para sempre”.Mas, quando outra maldição terrível é revelada, Evangeline se vê obrigada a estar novamente ao lado do Príncipe de Copas. Só que, desta vez, novas regras serão impostas. Jacks não é a única pessoa com quem Evangeline precisa ter cuidado. Na verdade, apesar de sua vontade de desprezá-lo, talvez ele seja aquele em quem a jovem possa confiar de fato.Agora, em vez de um feitiço de amor causando estragos na vida de Evangeline, um feitiço assassino foi lançado. E para quebrá-lo, ela e Jacks terão que lutar contra novos inimigos e uma mágica que brinca com mentes e corações.Evangeline sempre seguiu seu coração, mas será que ela pode confiar nele desta vez?',
+      resenha: 'A aguardada sequência de Era Uma Vez Um Coração Partido traz uma nova aventura mágica e romântica. Após ser traída por Jacks, o Príncipe de Copas, Evangeline Raposa decide não mais confiar nele. Usando seus próprios poderes, ela acredita que pode reverter o destino e alcançar o tão sonhado final feliz. No entanto, uma nova e perigosa maldição a obriga a se aliar novamente a Jacks. Juntos, terão que enfrentar desafios ainda maiores, onde as regras do jogo mudam constantemente. Uma história repleta de magia, romance e escolhas difíceis, A Balada do Felizes para Nunca é uma leitura envolvente para quem adora um conto de fadas com reviravoltas e personagens cativantes. Não perca essa emocionante continuação!',
       preco: 42.48,
       capa: 'public/image/ABalada.jpg',
       autor: 'Stephanie Garber',
@@ -115,7 +115,7 @@ const listaLivros = ref(
       id: 11,
       titulo: 'A maldição do verdadeiro amor',
       resumo: 'Evangeline Raposa desperta sem memórias, casada com Apollo e vivendo em um castelo, mas sem saber o alto preço que pagou por esse conto de fadas. Enquanto seu marido esconde a verdade e planeja eliminar Jacks, o Príncipe de Copas, o amor verdadeiro será testado em meio a traições e segredos no desfecho da trilogia Era uma vez um coração partido.',
-      resenha: 'Ao se aventurar pelo Magnifico Norte, Evangeline Raposa continuava em busca de seu final feliz. Após acordar sem se recordar do passado, ela se vê casada com Apollo e o lendário castelo do príncipe é, aparentemente, sua nova morada.Porém, para viver esse suposto conto de fadas, Evangeline precisou pagar um preço devastador sem nem ao menos fazer ideia disso. Ela desconhece tudo aquilo que perdeu, e se depender de seu marido… a jovem nunca descobrirá. Ele está tão determinado a garantir a ignorância de sua esposa que pretende dar um fim à vida de Jacks – o Príncipe de Copas.Com sangue sendo derramado e corações sendo usurpados, o verdadeiro amor vai ser colocado à prova no último livro da trilogia Era uma vez um coração partido. A maldição do verdadeiro amor é a aguardada conclusão desta história encantadora que arrebatou corações ao redor do mundo.',
+      resenha: 'A Maldição do Verdadeiro Amor é o emocionante desfecho da trilogia Era Uma Vez um Coração Partido, que conquistou leitores ao redor do mundo. A história acompanha Evangeline Raposa, que, após acordar sem memória, se vê casada com o príncipe Apollo em um castelo encantado. No entanto, ela desconhece o preço que pagou por esse "felizes para sempre". Determinados a manter seus segredos, Apollo e Jacks, o Príncipe de Copas, entram em uma batalha mortal, colocando à prova o verdadeiro significado do amor. Com reviravoltas surpreendentes e personagens cativantes, Garber entrega uma narrativa envolvente que mistura romance, magia e mistério. Ideal para fãs de fantasia e romances intensos.',
       preco: 48.28,
       capa: 'public/image/AMaldicao.jpg',
       autor: 'Stephanie Garber',
@@ -125,7 +125,7 @@ const listaLivros = ref(
       id: 12,
       titulo: 'Divinos Rivais',
       resumo: 'Iris Winnow, jovem jornalista, busca manter a família unida em meio a uma guerra entre deuses. Suas cartas ao irmão desaparecido vão parar nas mãos de Roman Kitt, seu rival, com quem cria uma ligação inesperada. Essa conexão a leva à linha de frente do conflito, em busca do irmão, da verdade e do amor.',
-      resenha: 'Após séculos adormecidos, os deuses estão em guerra novamente. No entanto, a única preocupação de Iris Winnow, uma jovem jornalista de dezoito anos, é manter sua família unida e em segurança.Enquanto a mãe de Iris sofre para superar um vício e o irmão está desaparecido em meio às trincheiras da guerra, a melhor forma de a garota atingir seu objetivo é conquistando a vaga de colunista no jornal onde trabalha, a Gazeta de Oath.Enquanto isso, para lidar com suas preocupações, Iris escreve cartas para o irmão. Porém, misteriosamente, elas vão parar nas mãos de Roman Kitt, seu insensível e fascinante rival na redação do jornal.Quando ele passa a responder anonimamente as cartas, os dois criam uma conexão mágica que seguirá Iris até a linha de frente da batalha, em uma busca por seu irmão, pela salvação da humanidade e pelo amor.',
+      resenha: 'Divinos Rivais é um romance da autora de sucesso, Stephanie Garber, que transporta os leitores para um mundo de magia, intriga e amores proibidos. A história segue os protagonistas enfrentando um universo de deuses e mitos, onde os destinos deles se entrelaçam de forma inesperada e apaixonante. No centro da trama, os personagens enfrentam dilemas sobre lealdade, poder e desejos conflitantes. Em um cenário onde os rivais são mais do que simples inimigos, mas figuras divinas com objetivos complexos, a narrativa é cheia de tensão, surpresas e momentos de pura magia. O livro é perfeito para quem ama uma mistura de romance, fantasia e drama com reviravoltas inesperadas. Uma leitura imperdível para fãs de histórias intensas e apaixonantes.',
       preco: 35.82,
       capa: 'public/image/DivinosRivais.jpg',
       autor: 'Rebecca Ross',
@@ -170,6 +170,12 @@ function decrementar(index) {
     return contador.value == 1;
   }
 }
+const resumoLivro = ref([]);
+
+function abaLivros(livro) {
+  resumoLivro.value = [livro];
+  telaAtual.value = 'abaLivros'
+}
 </script>
 
 <template>
@@ -203,11 +209,13 @@ function decrementar(index) {
 
         <ul class="Icones">
           <li class="carrinho" style="display: flex; align-items: center;">
-            <FontAwesomeIcon icon="cart-shopping" @click="telaAtual = 'carrinho'" style="margin-right: 10px; cursor: pointer;" />
+            <FontAwesomeIcon icon="cart-shopping" @click="telaAtual = 'carrinho'"
+              style="margin-right: 10px; cursor: pointer;" />
             <p>{{ listaCarrinho.length }}</p>
           </li>
           <li style="display: flex; align-items: center;">
-            <FontAwesomeIcon icon="heart" @click="telaAtual = 'favoritos'" style="margin-right: 10px; cursor: pointer;" />
+            <FontAwesomeIcon icon="heart" @click="telaAtual = 'favoritos'"
+              style="margin-right: 10px; cursor: pointer;" />
             <p>{{ favoritos.length }}</p>
           </li>
           <li>
@@ -258,10 +266,11 @@ function decrementar(index) {
           <ul style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
 
             <li v-for="livro in listaLivros" :key="livro.id" style="width: 19%; justify-items: left;">
-              <img :src="livro.capa" alt="#" style="flex: 1 1 400px; width: 250px; height:350px; ">
+              <img :src="livro.capa" alt="#" style="flex: 1 1 400px; width: 250px; height:350px;"
+                @click="abaLivros(livro)">
 
               <p style="justify-items: left; white-space: pre-line; font-weight: 600;font-size: 1.1rem;">{{ livro.titulo
-              }}</p>
+                }}</p>
 
               <p style="color: #4F4C57; font-weight: 400; font-size: 0.9rem; margin-top: 0.2vw;">{{ livro.autor }}</p>
 
@@ -322,13 +331,13 @@ function decrementar(index) {
                 </div>
                 <div class="lado" style="display: flex; width: 20%;">
                   <div class="button" style="display: flex;">
-                    <p @click="incrementar(index)">
+                    <p @click="incrementar(index)" style="cursor: pointer;">
                       +
                     </p>
                     <p style="margin: 0 10px;">
                       {{ book.contador }}
                     </p>
-                    <p @click="decrementar(index)">
+                    <p @click="decrementar(index)" style="cursor: pointer;">
                       -
                     </p>
                   </div>
@@ -365,11 +374,41 @@ function decrementar(index) {
           <input type="text" v-model="inputValue" placeholder="Código do cupon">
           <button class="button" @click="limparInput">Inserir cupom</button>
         </section>
+        
       </div>
+  <section v-if="telaAtual === 'abaLivros'" class="aba-livro">
+    <div v-for="livro in resumoLivro" :key="livro.id" class="informacoes">
+      <div>
+        <img :src="livro.capa" alt="#" style="width: 490px; height: 570px; object-fit: contain;">
+      </div>
+      <div class="resumo">
+        <h2>{{ livro.titulo }}</h2>
+      <p style="color: #4F4C57; font-size: 1.1rem;">{{ livro.autor }}</p>
+      <p class="resenha" style="font-size: 1.1rem;">{{ livro.resenha }}</p>
+      <div style="align-items: center;">
+        <button @click="adicionarCarrinho(livro)"
+                :class="listaCarrinho.some(item => item.id === livro.id) ? 'btn-adicionado' : 'btn-comprar'"
+                style="cursor: pointer;">
+                <FontAwesomeIcon icon="cart-shopping" />
+                {{listaCarrinho.some(item => item.id === livro.id) ? 'Adicionado' : 'Comprar'}}
+              </button>
+              
+              <FontAwesomeIcon :icon="[favoritos.includes(livro.id) ? 'fas' : 'far', 'heart']"
+                  @click="adicionarFavoritos(livro.id)"
+                  style="cursor: pointer; color: #2e649e; margin-left: 4rem; font-size: 1.4rem;" />
+      </div>
+      
+
+      </div>
+      
+      
+    </div>
+    <button @click="telaAtual = 'loja'"class="voltar">Voltar</button>
+  </section>
 
       <section v-if="telaAtual === 'favoritos' && favoritos.length == 0" class="favoritosVazio">
         <p>Você ainda não tem favoritos</p>
-        <font-awesome-icon :icon="['fas', 'heart-crack']" style="color: #2e649e; font-size: 2.3rem;"/>
+        <font-awesome-icon :icon="['fas', 'heart-crack']" style="color: #2e649e; font-size: 2.3rem;" />
         <p><button @click="telaAtual = 'loja'"> Volta para loja</button></p>
       </section>
       <section v-if="telaAtual === 'favoritos' && favoritos.length > 0" class="favoritos">
@@ -690,6 +729,7 @@ section.favoritos button {
   border: none;
   padding: 7px 20px;
 }
+
 section.favoritosVazio {
   background-color: #4a88cb39;
   text-align: center;
@@ -697,18 +737,70 @@ section.favoritosVazio {
   padding: 10vw;
   border-radius: 20px;
 }
-section.favoritosVazio p{
+
+section.favoritosVazio p {
   font-size: 2rem;
   color: #4F4C57;
-  font-weight: 700; 
+  font-weight: 700;
   margin-bottom: 1.5vw;
   margin-top: 1vw;
 }
-section.favoritosVazio button{
+
+section.favoritosVazio button {
   background-color: #4a88cb;
   border: none;
   color: white;
   padding: 7px 30px;
   font-size: 1.04rem;
+}
+
+section.aba-livro .informacoes{
+  display: flex;
+  justify-content: space-between;
+  margin: 3vw 8vw;    
+  border: #4a88cb 2px solid;
+  padding: 2vw;
+  align-items: center;
+  border-radius: 5px;
+}
+section.aba-livro .informacoes .resumo{
+  margin-left: 5vw;
+
+}
+
+section.aba-livro .informacoes h2{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+section.aba-livro .informacoes .resenha{
+  margin-top: 4.5vw;
+  margin-bottom: 6vw;
+}
+section.aba-livro .informacoes button {
+  background-color: #4a88cb;
+  color: white;
+  border: none;
+  padding: 0.5vw 7vw;
+  font-size: 1.05rem;
+  border-radius: 4px;
+}
+section.aba-livro .informacoes button:hover {
+  transform: scale(1.01);
+  transition: all 0.5s ease;
+  background-color: #70a1d6;
+}
+
+section.aba-livro .informacoes button.btn-adicionado {
+  background-color: #28a745;
+  padding: 0.5vw 5.5vw;
+}
+section.aba-livro .voltar{
+  margin-left: 8vw;
+  background-color: #4a88cb;
+  color: white;
+  border: none;
+  padding: 5px 60px;
+  font-size: 1.1rem;
 }
 </style>
