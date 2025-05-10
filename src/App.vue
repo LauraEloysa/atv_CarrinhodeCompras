@@ -1,7 +1,7 @@
 <script setup>
 
 import { faHeart, fas } from '@fortawesome/free-solid-svg-icons'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 const inputValue = ref('')
 
 function limparInput() {
@@ -169,13 +169,21 @@ function decrementar(index) {
     listaCarrinho.value.splice(index, 1)
     return contador.value == 1;
   }
-}
+} 
 const resumoLivro = ref([]);
 
 function abaLivros(livro) {
   resumoLivro.value = [livro];
   telaAtual.value = 'abaLivros'
 }
+const livrosFiltrados = computed(() => {
+  if (!inputValue.value.trim()) {
+    return listaLivros.value
+  }
+  return listaLivros.value.filter(livro =>
+    livro.titulo.toLowerCase().includes(inputValue.value.toLowerCase())
+  )
+})
 </script>
 
 <template>
@@ -196,7 +204,7 @@ function abaLivros(livro) {
         <ul>
           <li>
             <input type="text" v-model="inputValue" placeholder="Pesquisar">
-            <FontAwesomeIcon class="iconePesquisa" icon="magnifying-glass" @click="limparInput" />
+            <FontAwesomeIcon class="iconePesquisa" icon="magnifying-glass" @click=" telaAtual = 'pesquisa'" />
           </li>
         </ul>
 
@@ -228,12 +236,38 @@ function abaLivros(livro) {
     </header>
 
     <body>
-      <div v-if="telaAtual === 'loja'">
+      <div v-if="inputValue.trim() !== ''" class="principal-pesquisa">
+        <section class="pesquisa">
+          <ul>
+            <li v-for="livro in livrosFiltrados" :key="livro.id" class="livro-item">
+              <img :src="livro.capa" alt="Capa do livro" width="200" height="280" />
+              <h3>{{ livro.titulo }}</h3>
+              <p>{{ livro.autor }}</p>
+              <p>R$ {{ livro.preco }}</p>
+              <div>
+                    <button @click="adicionarCarrinho(livro)"
+                :class="listaCarrinho.some(item => item.id === livro.id) ? 'btn-adicionado' : 'btn-comprar'"
+                style="cursor: pointer;">
+                <FontAwesomeIcon icon="cart-shopping" />
+                {{listaCarrinho.some(item => item.id === livro.id) ? 'Adicionado' : 'Comprar'}}
+              </button>
+              <FontAwesomeIcon :icon="[favoritos.includes(livro.id) ? 'fas' : 'far', 'heart']"
+                  @click="adicionarFavoritos(livro.id)"
+                  style="cursor: pointer; margin-left: 1rem; color: #2e649e; font-size: 1.02rem;" />
+              </div>
+
+            </li>
+          </ul>
+        </section>
+
+      </div>
+      <div v-if="telaAtual === 'loja' && inputValue.trim() === ''">
         <section class="random" style="display: flex; align-items: center;">
           <div>
             <p class="autor">{{ livroEscolhido.autor }}</p>
             <p class="titulo"> {{ livroEscolhido.titulo }}</p>
-            <p class="resumo">{{ livroEscolhido.resumo }}</p> <button>Acessar página do livro</button>
+            <p class="resumo">{{ livroEscolhido.resumo }}</p>
+            <button @click="abaLivros(livroEscolhido)">Acessar página do livro</button>
           </div>
           <div>
             <img :src="livroEscolhido.capa" alt="#"
@@ -270,7 +304,7 @@ function abaLivros(livro) {
                 @click="abaLivros(livro)">
 
               <p style="justify-items: left; white-space: pre-line; font-weight: 600;font-size: 1.1rem;">{{ livro.titulo
-                }}</p>
+              }}</p>
 
               <p style="color: #4F4C57; font-weight: 400; font-size: 0.9rem; margin-top: 0.2vw;">{{ livro.autor }}</p>
 
@@ -294,7 +328,7 @@ function abaLivros(livro) {
         </section>
       </div>
 
-      <div v-if="listaCarrinho.length == 0 && telaAtual === 'carrinho'" class="carrinho-vazio">
+      <div v-if="listaCarrinho.length == 0 && telaAtual === 'carrinho' && inputValue.trim() === ''" class="carrinho-vazio">
         <p>
           <img src="https://cdn-icons-png.flaticon.com/512/11010/11010851.png" alt="Carrinho" width="120px">
         </p>
@@ -306,7 +340,7 @@ function abaLivros(livro) {
 
       </div>
 
-      <div v-if="telaAtual === 'carrinho' && listaCarrinho.length > 0" style="display: flex;">
+      <div v-if="telaAtual === 'carrinho' && listaCarrinho.length > 0 && inputValue.trim() === ''" style="display: flex; ">
         <section class="carrinho">
           <h2>
             <FontAwesomeIcon icon="truck" /> Seu Carrinho
@@ -374,39 +408,39 @@ function abaLivros(livro) {
           <input type="text" v-model="inputValue" placeholder="Código do cupon">
           <button class="button" @click="limparInput">Inserir cupom</button>
         </section>
-        
+
       </div>
-  <section v-if="telaAtual === 'abaLivros'" class="aba-livro">
-    <div v-for="livro in resumoLivro" :key="livro.id" class="informacoes">
-      <div>
-        <img :src="livro.capa" alt="#" style="width: 490px; height: 570px; object-fit: contain;">
-      </div>
-      <div class="resumo">
-        <h2>{{ livro.titulo }}</h2>
-      <p style="color: #4F4C57; font-size: 1.1rem;">{{ livro.autor }}</p>
-      <p class="resenha" style="font-size: 1.1rem;">{{ livro.resenha }}</p>
-      <div style="align-items: center;">
-        <button @click="adicionarCarrinho(livro)"
+      <section v-if="telaAtual === 'abaLivros' && inputValue.trim() === ''" class="aba-livro">
+        <div v-for="livro in resumoLivro" :key="livro.id" class="informacoes">
+          <div>
+            <img :src="livro.capa" alt="#" style="width: 490px; height: 570px; object-fit: contain;">
+          </div>
+          <div class="resumo">
+            <h2>{{ livro.titulo }}</h2>
+            <p style="color: #4F4C57; font-size: 1.1rem;">{{ livro.autor }}</p>
+            <p class="resenha" style="font-size: 1.1rem;">{{ livro.resenha }}</p>
+            <div style="align-items: center;">
+              <button @click="adicionarCarrinho(livro)"
                 :class="listaCarrinho.some(item => item.id === livro.id) ? 'btn-adicionado' : 'btn-comprar'"
                 style="cursor: pointer;">
                 <FontAwesomeIcon icon="cart-shopping" />
                 {{listaCarrinho.some(item => item.id === livro.id) ? 'Adicionado' : 'Comprar'}}
               </button>
-              
+
               <FontAwesomeIcon :icon="[favoritos.includes(livro.id) ? 'fas' : 'far', 'heart']"
-                  @click="adicionarFavoritos(livro.id)"
-                  style="cursor: pointer; color: #2e649e; margin-left: 4rem; font-size: 1.4rem;" />
-      </div>
-      
+                @click="adicionarFavoritos(livro.id)"
+                style="cursor: pointer; color: #2e649e; margin-left: 4rem; font-size: 1.4rem;" />
+            </div>
 
-      </div>
-      
-      
-    </div>
-    <button @click="telaAtual = 'loja'"class="voltar">Voltar</button>
-  </section>
 
-      <section v-if="telaAtual === 'favoritos' && favoritos.length == 0" class="favoritosVazio">
+          </div>
+
+
+        </div>
+        <button @click="telaAtual = 'loja'" class="voltar">Voltar</button>
+      </section>
+
+      <section v-if="telaAtual === 'favoritos' && favoritos.length == 0 && inputValue.trim() === ''" class="favoritosVazio">
         <p>Você ainda não tem favoritos</p>
         <font-awesome-icon :icon="['fas', 'heart-crack']" style="color: #2e649e; font-size: 2.3rem;" />
         <p><button @click="telaAtual = 'loja'"> Volta para loja</button></p>
@@ -725,7 +759,7 @@ section.favoritos button {
   color: white;
   margin-left: 2.4vw;
   margin-top: 2vw;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border: none;
   padding: 7px 20px;
 }
@@ -754,29 +788,32 @@ section.favoritosVazio button {
   font-size: 1.04rem;
 }
 
-section.aba-livro .informacoes{
+section.aba-livro .informacoes {
   display: flex;
   justify-content: space-between;
-  margin: 3vw 8vw;    
+  margin: 3vw 8vw;
   border: #4a88cb 2px solid;
   padding: 2vw;
   align-items: center;
   border-radius: 5px;
 }
-section.aba-livro .informacoes .resumo{
+
+section.aba-livro .informacoes .resumo {
   margin-left: 5vw;
 
 }
 
-section.aba-livro .informacoes h2{
+section.aba-livro .informacoes h2 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
-section.aba-livro .informacoes .resenha{
+
+section.aba-livro .informacoes .resenha {
   margin-top: 4.5vw;
   margin-bottom: 6vw;
 }
+
 section.aba-livro .informacoes button {
   background-color: #4a88cb;
   color: white;
@@ -785,6 +822,7 @@ section.aba-livro .informacoes button {
   font-size: 1.05rem;
   border-radius: 4px;
 }
+
 section.aba-livro .informacoes button:hover {
   transform: scale(1.01);
   transition: all 0.5s ease;
@@ -795,12 +833,56 @@ section.aba-livro .informacoes button.btn-adicionado {
   background-color: #28a745;
   padding: 0.5vw 5.5vw;
 }
-section.aba-livro .voltar{
+
+section.aba-livro .voltar {
   margin-left: 8vw;
   background-color: #4a88cb;
   color: white;
   border: none;
   padding: 5px 60px;
   font-size: 1.1rem;
+}
+
+div.principal-pesquisa {
+  margin: auto;
+}
+
+section.pesquisa {
+  margin: 2vw 5vw 0 8vw;
+}
+
+section.pesquisa ul {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;  
+}
+
+section.pesquisa ul li {
+  align-items: center;
+  width: 19%;
+  margin-bottom: 2vw;  
+   display: grid;
+}
+section.pesquisa h3{
+  width: 90%;
+  color: #4F4C57;
+  font-weight: 600;
+}
+section.pesquisa button{
+background-color: #4a88cb;
+color: white;
+border: none;
+padding: 5px 40px;
+margin: 1vw 0 1vw 0;
+}
+section.pesquisa button:hover {
+  transform: scale(1.02);
+  transition: all 0.5s ease;
+  background-color: #70a1d6;
+}
+
+section.pesquisa button.btn-adicionado {
+  background-color: #28a745;
+  padding: 5px 30px;
 }
 </style>
