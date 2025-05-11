@@ -184,6 +184,11 @@ const livrosFiltrados = computed(() => {
     livro.titulo.toLowerCase().includes(inputValue.value.toLowerCase())
   )
 })
+function decrementarlixeira(index){
+  if (index >= 0 && index < listaCarrinho.value.length) {
+    listaCarrinho.value.splice(index, 1);
+  }
+}
 </script>
 
 <template>
@@ -364,7 +369,8 @@ const livrosFiltrados = computed(() => {
 
                 </div>
                 <div class="lado" style="display: flex; width: 20%;">
-                  <div class="button" style="display: flex;">
+                  <div style="display: flex; align-items: center;">
+                     <div class="button" style="display: flex; align-items: center;">
                     <p @click="incrementar(index)" style="cursor: pointer;">
                       +
                     </p>
@@ -374,6 +380,12 @@ const livrosFiltrados = computed(() => {
                     <p @click="decrementar(index)" style="cursor: pointer;">
                       -
                     </p>
+                  </div>
+                  <div>
+                    <button class="lixeira" @click="decrementarlixeira(index)">
+                      <span class="fa-solid fa-trash-can"></span>
+                    </button>
+                  </div>
                   </div>
                   <div>
                     <p>R${{ (book.preco * book.contador).toFixed(2) }}</p>
@@ -620,15 +632,28 @@ section.carrinho .preco {
   color: #4F4C57;
   font-weight: 600;
 }
-
+section.carrinho .lado{
+  align-items: center;
+}
 section.carrinho .button {
   padding: 3px 20px;
   border: 2px solid #4F4C57;
-  margin: 0 3vw;
+  margin: 0 0.5vw 0 3vw ;
   font-size: 1.01rem;
   font-weight: 600;
 }
-
+section.carrinho .lixeira{
+  border: none;
+  background-color: white;
+  font-size: 1.2rem;
+  margin-right: 5vw;
+  font-weight: 500;
+}
+section.carrinho .lixeira:hover{
+  color: #4a88cb;
+  transition: 0.5s;
+  scale: 1.1;
+}
 section.carrinho .lado {
   width: 10%;
   min-width: 60px;
@@ -650,7 +675,6 @@ section.carrinho button.paginaPrincipal {
   font-size: 1.03rem;
   margin: 2vw 0 2vw 2.5vw;
 }
-
 section.valorTotal {
   margin: auto;
 }
