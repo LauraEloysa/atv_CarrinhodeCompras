@@ -2,6 +2,20 @@
 
 import { faHeart, fas } from '@fortawesome/free-solid-svg-icons'
 import { computed, ref } from 'vue'
+
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import BannerComponent from '@/components/BannerComponent.vue'
+import InformacoesComponent from '@/components/InformacoesComponent.vue'
+import BooksComponent from '@/components/BooksComponent.vue'
+import EmptyCart from '@/components/EmptyCart.vue'
+import CartComponent from '@/components/CartComponent.vue'
+import ValueComponent from '@/components/ValueComponent.vue'
+import AbaBookComponent from '@/components/AbaBookComponent.vue'
+import EmptyFavorite from '@/components/EmptyFavorite.vue'
+import FavoritesComponent from '@/components/FavoritesComponent.vue'
+import PesquisaComponent from '@/components/PesquisaComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+
 const inputValue = ref('')
 
 function limparInput() {
@@ -141,7 +155,7 @@ const listaLivros = ref(
       autor: 'Rebecca Ross',
       contador: 1
     },
-      {
+    {
       id: 14,
       titulo: 'A rainha vermelha',
       resumo: 'Em um mundo dividido pelo sangue, Mare Barrow, uma vermelha sem esperanças, descobre um poder misterioso diante da elite prateada. Mesmo com sangue vermelho, ela desafia a ordem ao revelar habilidades sobrenaturais. Entre intrigas, príncipes e escolhas perigosas, Mare se vê no centro de uma revolução.',
@@ -161,7 +175,7 @@ const listaLivros = ref(
       autor: 'Victoria Aveyard',
       contador: 1
     },
-      {
+    {
       id: 16,
       titulo: 'A prisão do rei',
       resumo: 'Prisioneira no palácio e sem poderes, Mare Barrow é usada como símbolo de controle por Maven, o rei que a traiu. Enquanto resiste ao cativeiro, a Guarda Escarlate cresce, preparando-se para a guerra. Cal, dividido entre o dever e o amor, precisa escolher seu caminho em meio ao caos iminente.',
@@ -171,7 +185,7 @@ const listaLivros = ref(
       autor: 'Victoria Aveyard',
       contador: 1
     },
-      {
+    {
       id: 17,
       titulo: 'Tempestade de guerra',
       resumo: 'Após a traição de Cal, Mare Barrow segue lutando ao lado dos rebeldes para libertar Norta. Para vencer, ela se une ao príncipe que partiu seu coração e enfrenta Maven, o rei obcecado por ela. Em meio a batalhas e sacrifícios, Mare precisa decidir até onde está disposta a ir pela liberdade.',
@@ -181,7 +195,7 @@ const listaLivros = ref(
       autor: 'Victoria Aveyard',
       contador: 1
     },
-      {
+    {
       id: 18,
       titulo: 'Trono destruído',
       resumo: 'rono Destruído é uma coletânea imperdível para os fãs de Victoria Aveyard, trazendo seis contos que expandem o universo de Mare Barrow. Além das histórias já conhecidas, como "Canção da Rainha" e "Cicatrizes de Aço", o livro inclui quatro narrativas inéditas, explorando o passado de personagens e as consequências da guerra. Uma despedida emocionante e cheia de novos detalhes do mundo de Norta.',
@@ -191,7 +205,7 @@ const listaLivros = ref(
       autor: 'Victoria Aveyard',
       contador: 1
     },
-      {
+    {
       id: 19,
       titulo: 'Ninguém vai te ouvir gritar',
       resumo: 'A Academia Masters, um prestigiado internato secreto na Flórida, esconde mais do que apenas alunos de elite. Quando Calvin, filho do secretário de estado, desaparece misteriosamente, deixando um bilhete com um aviso enigmático, seu irmão Andrew se vê envolvido em uma teia de segredos e ameaças. A verdadeira prova da escola não está nos estudos, mas nas sombras que a envolvem.',
@@ -201,7 +215,7 @@ const listaLivros = ref(
       autor: 'Mark Miller',
       contador: 1
     },
-     {
+    {
       id: 20,
       titulo: 'Morando com um vampiro',
       resumo: 'Cassie Greenberg, uma artista em dificuldades financeiras, encontra um quarto para alugar com um preço inacreditável e divide o apartamento com o excêntrico Frederick J. Fitzwilliam, um homem misterioso que vive à noite. Quando descobre bolsas de sangue na geladeira, Frederick revela seu segredo: é um vampiro, e faz uma proposta que pode mudar a vida de Cassie para sempre',
@@ -211,7 +225,7 @@ const listaLivros = ref(
       autor: 'Jenna Levine',
       contador: 1
     },
-     {
+    {
       id: 21,
       titulo: 'Império do Vampiro',
       resumo: 'Há 27 anos, o sol desapareceu, e os vampiros dominaram a Terra, instaurando um império de trevas. Gabriel de León, meio humano e meio monstro, é o último Santo de Prata, um guerreiro treinado para caçar vampiros. Capturado, ele narra sua jornada repleta de batalhas, amores proibidos e a busca pelo Santo Graal, a última esperança de salvação. Império do Vampiro é o primeiro volume da série dark fantasy de Jay Kristoff.',
@@ -221,7 +235,7 @@ const listaLivros = ref(
       autor: 'Jay Kristoff',
       contador: 1
     },
-      {
+    {
       id: 22,
       titulo: 'Luar da Feiticeira de Ossos',
       resumo: 'Em um mundo onde somente as Feiticeiras de Ossos podem manter os mortos afastados, Ailesse deve cumprir um destino sombrio: encontrar o amor verdadeiro e matá-lo em até um ano. Bastien, em busca de vingança pela morte do pai, vê seus destinos se entrelaçarem com o dela. Enquanto isso, Sabine tenta salvar sua melhor amiga, em meio a magia, romance impossível e uma traição que ameaça romper a barreira entre vivos e mortos. Luar da Feiticeira de Ossos é o primeiro volume de uma duologia cheia de mistério e emoção.',
@@ -231,7 +245,7 @@ const listaLivros = ref(
       autor: 'Kathryn Purdie',
       contador: 1
     },
-      {
+    {
       id: 23,
       titulo: 'Uma janela sombria',
       resumo: 'Em Blunder, um reino amaldiçoado, Elspeth Spindle carrega um espírito sombrio, o Pesadelo, que a protege, mas cobra um preço alto. Quando ela se encontra com Ravyn Yew, capitão da Guarda Real, ambos se unem para encontrar as doze Cartas da Providência e libertar o reino. Enquanto a atração entre eles cresce, Elspeth deve decidir se pode confiar em Ravyn, ao mesmo tempo em que luta contra o Pesadelo que ameaça devorar sua mente e alma. Uma história de magia sombria, desejo perigoso e sacrifícios inevitáveis.',
@@ -241,7 +255,7 @@ const listaLivros = ref(
       autor: 'Rachel Gillig',
       contador: 1
     },
-      {
+    {
       id: 24,
       titulo: 'Quarta asa',
       resumo: 'Violet Sorrengail, aos 20 anos, é forçada por sua mãe, a temida general de Navarre, a competir por um lugar entre os cavaleiros de dragões no Instituto Militar Basgiath, onde a morte é quase certa para os fracos. Menor e mais frágil que os outros cadetes, Violet enfrenta inimigos, incluindo Xaden Riorson, o líder de esquadrão, e precisa usar sua inteligência para sobreviver. Em meio a traições, alianças e uma guerra iminente, Violet descobrirá segredos que podem mudar o destino do reino',
@@ -251,7 +265,7 @@ const listaLivros = ref(
       autor: 'Rebecca Yarros',
       contador: 1
     },
-      {
+    {
       id: 25,
       titulo: 'Noiva',
       resumo: 'Misery Lark, vampira renegada, é forçada a se casar com o alfa Lowe para selar a paz entre espécies. Ela esconde motivos pessoais por trás do acordo, buscando recuperar algo precioso. Entre traições e atração proibida, nasce um romance que desafia seus mundos',
@@ -261,7 +275,7 @@ const listaLivros = ref(
       autor: 'Ali Hazelwood',
       contador: 1
     },
-     {
+    {
       id: 26,
       titulo: 'Odeio te amar',
       resumo: 'Mara, Sadie e Hannah são cientistas que enfrentam dilemas amorosos com homens que desafiam sua lógica e sentimentos. Entre heranças complicadas, reencontros dolorosos e sobrevivência no Ártico, elas descobrem que a química vai além dos laboratórios. Amor, teoricamente mostra que, às vezes, o coração ignora até as leis da ciência.',
@@ -271,7 +285,7 @@ const listaLivros = ref(
       autor: 'Ali Hazelwood',
       contador: 1
     },
-     {
+    {
       id: 27,
       titulo: 'A hipótese do Amor',
       resumo: 'Olive Smith, aluna de doutorado, inventa um namoro para ajudar sua melhor amiga e acaba beijando o temido professor Adam Carlsen. Surpreendentemente, ele aceita manter a farsa, e o que era mentira começa a parecer real demais. Em meio a dados e experimentos, Olive descobre que o amor é a variável mais imprevisível.',
@@ -281,7 +295,7 @@ const listaLivros = ref(
       autor: 'Ali Hazelwood',
       contador: 1
     },
-     {
+    {
       id: 28,
       titulo: 'A razão do amor',
       resumo: 'Bee tem a chance de liderar um projeto da NASA, mas precisa trabalhar com Levi, seu antigo rival do doutorado. Apesar da tensão entre eles, ela começa a notar sinais inesperados de apoio — e de algo mais. Entre ciência e sentimento, Bee precisa decidir se segue a razão ou arrisca tudo pelo amor.',
@@ -301,7 +315,7 @@ const listaLivros = ref(
       autor: 'Hannah Nicole Maehrer',
       contador: 1
     },
-     {
+    {
       id: 30,
       titulo: 'De sangue e cinzas',
       resumo: 'Poppy, prestes a completar 19 anos, deve cumprir seu destino como Donzela de Solis e salvar o reino, embora não entenda o que isso implica. Quando Hawke Flynn entra em sua vida, ela se vê envolvida em mentiras, traições e desejos proibidos. Agora, precisa decidir em quem confiar, pois o destino de dois reinos depende dela.',
@@ -311,7 +325,7 @@ const listaLivros = ref(
       autor: 'Jennifer L. Armentrout',
       contador: 1
     },
-     {
+    {
       id: 31,
       titulo: 'A mecânica do amor',
       resumo: 'Bel, sem rumo após o colégio, se junta ao clube de robótica e se vê em rivalidade com Teo, o líder popular. Trabalhando juntos, Teo reconhece o talento de Bel e começa a se interessar por ela. Entre competição e amizade, eles enfrentam sentimentos inesperados.',
@@ -321,7 +335,7 @@ const listaLivros = ref(
       autor: 'Alexene Farol Follmuth',
       contador: 1
     },
-     {
+    {
       id: 32,
       titulo: 'História é tudo que me deixou',
       resumo: 'Quando Theo, o primeiro amor de Griffin, morre em um acidente, seu mundo desaba, pois ele sempre acreditou que Theo voltaria para ele. Agora, com o apoio de Jackson, o namorado atual de Theo, Griffin lida com compulsões e escolhas destrutivas. Para seguir em frente, ele precisa enfrentar seus próprios segredos e confrontar as lembranças de Theo antes que elas o consumam',
@@ -331,7 +345,7 @@ const listaLivros = ref(
       autor: 'Adam Silveira',
       contador: 1
     },
-     {
+    {
       id: 33,
       titulo: 'Para sempre',
       resumo: 'Após salvar o reino de um imperador tirano, Arek aceita temporariamente o trono, mas descobre que a princesa legítima está morta. Agora, ele precisa escolher um cônjuge antes de completar 18 anos para evitar um destino trágico. Em meio a magia, poder e desafios, Arek e seu melhor amigo Matt enfrentam uma jornada de descobertas, sentimentos inesperados e muito humor.',
@@ -341,7 +355,7 @@ const listaLivros = ref(
       autor: 'F.T. Lukens',
       contador: 1
     },
-     {
+    {
       id: 34,
       titulo: 'A filha do rei pirata',
       resumo: 'A capitã Alosa, filha do rei pirata, se deixa capturar pela tripulação inimiga para recuperar um mapa perdido que leva a um tesouro. No entanto, o pirata Riden, charmoso e mordaz, se torna seu maior obstáculo. Em uma aventura cheia de adrenalina, Alosa usará todos os seus truques para alcançar seu objetivo.',
@@ -351,7 +365,7 @@ const listaLivros = ref(
       autor: 'Tricia Levenseller',
       contador: 1
     },
-     {
+    {
       id: 35,
       titulo: 'Vermelho, branco e sangue azul',
       resumo: 'Alex Claremont-Diaz, filho da presidenta dos EUA, é o queridinho da mídia e tem futuro político promissor, mas ao ser forçado a interagir com o príncipe britânico Henry, ele enfrenta uma série de desentendimentos. Após um encontro desastroso, os dois fingem ser amigos para evitar um escândalo diplomático. No entanto, essa amizade começa a se transformar em algo inesperado, desafiando suas próprias identidades e expectativas.',
@@ -361,7 +375,7 @@ const listaLivros = ref(
       autor: 'Casey McQuiston',
       contador: 1
     },
-     {
+    {
       id: 36,
       titulo: 'Cinderela está morta',
       resumo: 'Dois séculos após Cinderela, o reino de Mersailles é dominado por tiranos. Sophia, sonhando em se casar com sua amiga Erin, foge para o mausoléu de Cinderela, onde encontra uma aliada inesperada. Juntas, elas enfrentam o regime opressor em busca de liberdade.',
@@ -371,7 +385,7 @@ const listaLivros = ref(
       autor: 'Kalynn Bayron',
       contador: 1
     },
-     {
+    {
       id: 37,
       titulo: 'Asas reluzentes',
       resumo: 'Clarion, fada da Primavera, entra no Bosque do Inverno para investigar rumores de um monstro. Lá, conhece Milori, um guardião do Inverno com quem forma um laço improvável. Mas sua união pode ser tão perigosa quanto a ameaça que enfrentam.',
@@ -381,7 +395,7 @@ const listaLivros = ref(
       autor: 'Allison Saft',
       contador: 1
     },
-     {
+    {
       id: 38,
       titulo: 'Luzes do Norte',
       resumo: 'Dimitria, caçadora renomada, é contratada para proteger Aurora, herdeira de uma família poderosa. A missão se complica quando sentimentos entre as duas surgem, ameaçando o coração do irmão de Dimitria e seu próprio futuro. Enquanto isso, um monstro perigoso assombra a floresta.',
@@ -391,7 +405,7 @@ const listaLivros = ref(
       autor: 'Giulianna Domingues',
       contador: 1
     },
-     {
+    {
       id: 39,
       titulo: 'Vergonha',
       resumo: 'Grace retorna à sua cidade natal para se curar da traição do marido e encontra consolo em Jackson, o rebelde local. O que começa como distração se transforma em algo mais profundo. Agora, ela precisa decidir entre o passado seguro e um futuro incerto.',
@@ -401,8 +415,8 @@ const listaLivros = ref(
       autor: 'Brittainy Cherry',
       contador: 1
     },
-     {
-      id: 40  ,
+    {
+      id: 40,
       titulo: 'Sonho e Pesadelo',
       resumo: 'Criados como opostos, Sonho e Pesadelo jamais deveriam se encontrar. Mas quando ele escapa de seu cativeiro, nasce entre eles uma conexão inesperada. Juntos, precisam enfrentar os deuses e descobrir que talvez equilíbrio venha da união, não da separação.',
       resenha: 'No universo onde tudo nasce em pares, a deusa Sonho foi criada para nunca se aproximar de sua metade divina, o deus Pesadelo. Filha de Esperança e Vontade, ela representa a luz, enquanto ele, nascido de Angústia e Medo, representa as sombras. Movido pelo ressentimento, Pesadelo rompe as correntes que o aprisionam, disposto a se vingar de Sonho. No entanto, o encontro entre os dois desencadeia uma conexão inesperada. Entre encontros secretos, questionamentos sobre suas origens e sentimentos proibidos, ambos precisam desafiar os deuses que os criaram para restaurar o equilíbrio do mundo — e descobrir que, juntos, são mais do que apenas opostos.',
@@ -442,14 +456,16 @@ function incrementar(index) {
 }
 
 function decrementar(index) {
+  const item = listaCarrinho.value[index];
+  if (!item) return;
 
-  const item = listaCarrinho.value[index]
-  item.contador--
+  item.contador--;
+
   if (item.contador <= 0) {
-    listaCarrinho.value.splice(index, 1)
-    return contador.value == 1;
+
+    listaCarrinho.value.splice(index, 1);
   }
-} 
+}
 const resumoLivro = ref([]);
 
 function abaLivros(livro) {
@@ -464,7 +480,7 @@ const livrosFiltrados = computed(() => {
     livro.titulo.toLowerCase().includes(inputValue.value.toLowerCase())
   )
 })
-function decrementarlixeira(index){
+function decrementarlixeira(index) {
   if (index >= 0 && index < listaCarrinho.value.length) {
     listaCarrinho.value.splice(index, 1);
   }
@@ -472,721 +488,93 @@ function decrementarlixeira(index){
 </script>
 
 <template>
-  <main>
-    <header>
-      <div>
-
-        <ul class="logo">
-          <li>
-            <a href="App.vue" style="color: black;">MundoLiterário</a>
-          </li>
-          <li class="borderBlueEndColor">
-            Apreço a <br>
-            leitura
-          </li>
-        </ul>
-
-        <ul>
-          <li>
-            <input type="text" v-model="inputValue" placeholder="Pesquisar">
-            <FontAwesomeIcon class="iconePesquisa" icon="magnifying-glass" @click=" telaAtual = 'pesquisa'" />
-          </li>
-        </ul>
-
-        <ul class="menus">
-          <li><a href="#">Termos</a></li>
-          <li><a href="#">Equipe</a></li>
-          <li><a href="#">Envio</a></li>
-          <li><a href="#">Devolução</a></li>
-        </ul>
-
-        <ul class="Icones">
-          <li class="carrinho" style="display: flex; align-items: center;">
-            <FontAwesomeIcon icon="cart-shopping" @click="telaAtual = 'carrinho'"
-              style="margin-right: 10px; cursor: pointer;" />
-            <p>{{ listaCarrinho.length }}</p>
-          </li>
-          <li style="display: flex; align-items: center;">
-            <FontAwesomeIcon icon="heart" @click="telaAtual = 'favoritos'"
-              style="margin-right: 10px; cursor: pointer;" />
-            <p>{{ favoritos.length }}</p>
-          </li>
-          <li>
-            <FontAwesomeIcon icon="user" />
-          </li>
-        </ul>
-
-      </div>
-
-    </header>
-
-    <body>
-      <div v-if="inputValue.trim() !== ''" class="principal-pesquisa">
-        <section class="pesquisa">
-          <ul>
-            <li v-for="livro in livrosFiltrados" :key="livro.id" class="livro-item">
-              <img :src="livro.capa" alt="Capa do livro" width="200" height="280" />
-              <h3>{{ livro.titulo }}</h3>
-              <p>{{ livro.autor }}</p>
-              <p>R$ {{ livro.preco }}</p>
-              <div>
-                    <button @click="adicionarCarrinho(livro)"
-                :class="listaCarrinho.some(item => item.id === livro.id) ? 'btn-adicionado' : 'btn-comprar'"
-                style="cursor: pointer;">
-                <FontAwesomeIcon icon="cart-shopping" />
-                {{listaCarrinho.some(item => item.id === livro.id) ? 'Adicionado' : 'Comprar'}}
-              </button>
-              <FontAwesomeIcon :icon="[favoritos.includes(livro.id) ? 'fas' : 'far', 'heart']"
-                  @click="adicionarFavoritos(livro.id)"
-                  style="cursor: pointer; margin-left: 1rem; color: #2e649e; font-size: 1.02rem;" />
-              </div>
-
-            </li>
-          </ul>
-        </section>
-
-      </div>
-      <div v-if="telaAtual === 'loja' && inputValue.trim() === ''">
-        <section class="random" style="display: flex; align-items: center;">
-          <div>
-            <p class="autor">{{ livroEscolhido.autor }}</p>
-            <p class="titulo"> {{ livroEscolhido.titulo }}</p>
-            <p class="resumo">{{ livroEscolhido.resumo }}</p>
-            <button @click="abaLivros(livroEscolhido)">Acessar página do livro</button>
-          </div>
-          <div>
-            <img :src="livroEscolhido.capa" alt="#"
-              style="flex: 1 1 400px; width: 320px; height:450px; box-shadow: 3px 3px 5px #4F4C57; margin-left: 15vw;">
-
-          </div>
-        </section>
-        <section class="informacoes">
-          <div>
-            <FontAwesomeIcon icon="truck" />
-            <p>
-              Frete grátis para SC
-            </p>
-          </div>
-          <div style="border-left: #2e649e solid 2px; border-right: #2e649e solid 2px; margin: 0 6vw">
-            <FontAwesomeIcon icon="star" style="margin-left: 5.5vw;" />
-            <p style="margin-right: 5.5vw; ">
-              Livros recomendados
-            </p>
-          </div>
-          <div>
-            <FontAwesomeIcon icon="book-open" />
-            <p>
-              Mais vendidos
-            </p>
-          </div>
-        </section>
-        <section class="livros">
-
-          <ul style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
-
-            <li v-for="livro in listaLivros" :key="livro.id" style="width: 19%; justify-items: left;">
-              <img :src="livro.capa" alt="#" style="flex: 1 1 400px; width: 250px; height:350px;"
-                @click="abaLivros(livro)">
-
-              <p style="justify-items: left; white-space: pre-line; font-weight: 600;font-size: 1.1rem;">{{ livro.titulo
-              }}</p>
-
-              <p style="color: #4F4C57; font-weight: 400; font-size: 0.9rem; margin-top: 0.2vw;">{{ livro.autor }}</p>
-
-              <div style="display: flex; align-items: center; font-size: 1.06rem; margin-bottom: 1vw;">
-
-                <p style="margin-top:0.2vw ;">R${{ livro.preco }}</p>
-
-                <FontAwesomeIcon :icon="[favoritos.includes(livro.id) ? 'fas' : 'far', 'heart']"
-                  @click="adicionarFavoritos(livro.id)"
-                  style="cursor: pointer; margin-left: 1rem; color: #2e649e; margin-left: 10.5rem;" />
-
-              </div>
-              <button @click="adicionarCarrinho(livro)"
-                :class="listaCarrinho.some(item => item.id === livro.id) ? 'btn-adicionado' : 'btn-comprar'"
-                style="cursor: pointer;">
-                <FontAwesomeIcon icon="cart-shopping" />
-                {{listaCarrinho.some(item => item.id === livro.id) ? 'Adicionado' : 'Comprar'}}
-              </button>
-            </li>
-          </ul>
-        </section>
-      </div>
-
-      <div v-if="listaCarrinho.length == 0 && telaAtual === 'carrinho' && inputValue.trim() === ''" class="carrinho-vazio">
-        <p>
-          <img src="https://cdn-icons-png.flaticon.com/512/11010/11010851.png" alt="Carrinho" width="120px">
-        </p>
-        <p style="font-size: 2.1rem; font-weight: 700; ">Seu carrinho está vazio</p>
-
-        <p>
-          <button @click="telaAtual = 'loja'">Voltar para a loja</button>
-        </p>
-
-      </div>
-
-      <div v-if="telaAtual === 'carrinho' && listaCarrinho.length > 0 && inputValue.trim() === ''" style="display: flex; ">
-        <section class="carrinho">
-          <h2>
-            <FontAwesomeIcon icon="truck" /> Seu Carrinho
-          </h2>
-          <ul>
-
-            <li v-for="(book, index) in listaCarrinho" :key="index" style="display: flex; align-items: center;">
-              <img :src="book.capa" alt="Capa do livro" width="100px" height="150px"
-                style="margin-bottom: 1vw; margin-top: 1vw; " />
-              <div style="display: flex; align-items: center; margin-left: 2vw; width: 30%;">
-                <div>
-                  <div>
-                    <p class="titulo">{{ book.titulo }}</p>
-                  </div>
-                  <div>
-                    <p class="autor">{{ book.autor }}</p>
-                  </div>
-                  <div>
-                    <p class="preco"> R$ {{ book.preco }}</p>
-                  </div>
-
-                </div>
-                <div class="lado" style="display: flex; width: 20%;">
-                  <div style="display: flex; align-items: center;">
-                     <div class="button" style="display: flex; align-items: center;">
-                    <p @click="incrementar(index)" style="cursor: pointer;">
-                      +
-                    </p>
-                    <p style="margin: 0 10px;">
-                      {{ book.contador }}
-                    </p>
-                    <p @click="decrementar(index)" style="cursor: pointer;">
-                      -
-                    </p>
-                  </div>
-                  <div>
-                    <button class="lixeira" @click="decrementarlixeira(index)">
-                      <span class="fa-solid fa-trash-can"></span>
-                    </button>
-                  </div>
-                  </div>
-                  <div>
-                    <p>R${{ (book.preco * book.contador).toFixed(2) }}</p>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <button class="paginaPrincipal" @click="telaAtual = 'loja'">
-            Voltar para loja
-          </button>
-        </section>
-        <section class="valorTotal">
-          <div class="principal">
-            <h2 style="font-weight: 600;">Total da compra:</h2>
-            <div>
-              <p class="espacoMaior">Produtos</p>
-              <p> R$ {{listaCarrinho.reduce((soma, book) => soma + book.preco * book.contador, 0).toFixed(2)}}</p>
-            </div>
-            <div>
-              <p class="espacoMaior">Frete</p>
-              <p>Grátis</p>
-            </div>
-            <div class="semBorder">
-              <p class="espacoMaior">Total</p>
-              <p> R$ {{listaCarrinho.reduce((soma, book) => soma + book.preco * book.contador, 0).toFixed(2)}}</p>
-            </div>
-            <div class="semBorder">
-              <button class="pagamento">Ir para pagamento</button>
-            </div>
-          </div>
-          <input type="text" v-model="inputValue" placeholder="Código do cupon">
-          <button class="button" @click="limparInput">Inserir cupom</button>
-        </section>
-
-      </div>
-      <section v-if="telaAtual === 'abaLivros' && inputValue.trim() === ''" class="aba-livro">
-        <div v-for="livro in resumoLivro" :key="livro.id" class="informacoes">
-          <div>
-            <img :src="livro.capa" alt="#" style="width: 490px; height: 570px; object-fit: contain;">
-          </div>
-          <div class="resumo">
-            <h2>{{ livro.titulo }}</h2>
-            <p style="color: #4F4C57; font-size: 1.1rem;">{{ livro.autor }}</p>
-            <p class="resenha" style="font-size: 1.1rem;">{{ livro.resenha }}</p>
-            <div style="align-items: center;">
-              <button @click="adicionarCarrinho(livro)"
-                :class="listaCarrinho.some(item => item.id === livro.id) ? 'btn-adicionado' : 'btn-comprar'"
-                style="cursor: pointer;">
-                <FontAwesomeIcon icon="cart-shopping" />
-                {{listaCarrinho.some(item => item.id === livro.id) ? 'Adicionado' : 'Comprar'}}
-              </button>
-
-              <FontAwesomeIcon :icon="[favoritos.includes(livro.id) ? 'fas' : 'far', 'heart']"
-                @click="adicionarFavoritos(livro.id)"
-                style="cursor: pointer; color: #2e649e; margin-left: 4rem; font-size: 1.4rem;" />
-            </div>
 
 
-          </div>
+  <body>
 
+    <HeaderComponent 
+    v-model:inputValue="inputValue" 
+    :listaCarrinho="listaCarrinho" 
+    :favoritos="favoritos"
+    @cart="telaAtual = 'carrinho'" 
+    @favorite="telaAtual = 'favoritos'" 
+    />
 
-        </div>
-        <button @click="telaAtual = 'loja'" class="voltar">Voltar</button>
-      </section>
+    <PesquisaComponent v-if="inputValue.trim() !== ''" 
+    :livros="livrosFiltrados" 
+    :listaCarrinho="listaCarrinho"
+    :favoritos="favoritos" 
+    @adicionar-carrinho="adicionarCarrinho" 
+    @adicionar-favoritos="adicionarFavoritos" 
+    />
 
-      <section v-if="telaAtual === 'favoritos' && favoritos.length == 0 && inputValue.trim() === ''" class="favoritosVazio">
-        <p>Você ainda não tem favoritos</p>
-        <font-awesome-icon :icon="['fas', 'heart-crack']" style="color: #2e649e; font-size: 2.3rem;" />
-        <p><button @click="telaAtual = 'loja'"> Volta para loja</button></p>
-      </section>
-      <section v-if="telaAtual === 'favoritos' && favoritos.length > 0" class="favoritos">
-        <h2> <span class="fa-solid fa-heart"></span> Meus Favoritos</h2>
-        <ul>
-          <li v-for="livro in listaLivros.filter(l => favoritos.includes(l.id))" :key="livro.id">
-            <img :src="livro.capa" alt="Capa" width="80" />
-            <p class="titulo">{{ livro.titulo }}</p>
-            <p class="autor">{{ livro.autor }}</p>
-            <p class="preco">R$ {{ livro.preco }}</p>
-          </li>
-        </ul>
-        <button @click="telaAtual = 'loja'">Voltar para loja</button>
-      </section>
-    </body>
-  </main>
-  <footer>
-    <div class="footer">
-      <div class="redesSociais">
-        <p>Mundo Literário</p>
-        <ul style="display: flex;">
-          <li><span class="fa-brands fa-square-facebook"></span></li>
-          <li><span class="fa-brands fa-instagram"></span></li>
-          <li><span class="fa-brands fa-square-twitter"></span></li>
-        </ul>
-      </div>
-      <div class="contato">
-        <p>Contato</p>
-        <ul class="telefone">
-          <li><font-awesome-icon icon="phone" />
-            <p>+55 47 40045263</p>
-          </li>
-          <li><span class="fa-solid fa-clock"></span>
-            <p>8h às 23h - Seg a Sex</p>
-          </li>
-          <li><span class="fa-solid fa-envelope"></span>
-            <p>contato@mundoliterario.com</p>
-          </li>
-        </ul>
-        <ul style="display: flex;" class="cartoes">
-          <li><img src="/image/Paypal.png" alt=""></li>
-          <li><img src="/image/Mastercard.png" alt=""></li>
-          <li><img src="/image/VISA.png" alt=""></li>
-        </ul>
-      </div>
+    <div v-if="telaAtual === 'loja' && inputValue.trim() === ''">
+
+      <BannerComponent 
+      @abrirLivro="abaLivros(livroEscolhido)" 
+      :livroEscolhido="livroEscolhido"
+       />
+
+      <InformacoesComponent />
+
+      <BooksComponent 
+      :listaLivros="listaLivros" 
+      :listaCarrinho="listaCarrinho" 
+      :favoritos="favoritos"
+      @AdicionarCarrinho="adicionarCarrinho" 
+      @AdicionarFavoritos="adicionarFavoritos"
+      @abrirLivros="abaLivros" 
+      />
+
     </div>
-    <div class="copy">
-      <p>&copy; Alguns direitos reservados. Mundo Literário 2025. </p>
+
+    <div v-if="listaCarrinho.length == 0 && telaAtual === 'carrinho' && inputValue.trim() === ''">
+
+      <EmptyCart 
+      @voltar="telaAtual = 'loja'" 
+      />
+
     </div>
-  </footer>
+
+    <div v-if="telaAtual === 'carrinho' && listaCarrinho.length > 0 && inputValue.trim() === ''"
+      style="display: flex; ">
+
+      <CartComponent 
+      @voltar="telaAtual = 'loja'"
+      @íncrementar-book="incrementar" 
+      @decrementar-book="decrementar"
+      @lixeira="decrementarlixeira" 
+      :listaCarrinho="listaCarrinho" 
+      />
+
+      <ValueComponent 
+      @limpar="aplicarCupom" 
+      @adicionar-carrinho="AdicionarCarrinho" 
+      :listaCarrinho="listaCarrinho" 
+      />
+
+    </div>
+
+    <AbaBookComponent v-if="telaAtual === 'abaLivros' && inputValue.trim() === ''"
+      :resumoLivro="resumoLivro" :listaCarrinho="listaCarrinho" :favoritos="favoritos" @voltar="telaAtual = 'loja'"
+      @adicionar-carrinho="adicionarCarrinho" 
+      @adicionar-favorito="adicionarFavoritos" 
+      />
+
+    <FavoritesComponent v-if="telaAtual === 'favoritos' && favoritos.length > 0" @voltar="telaAtual = 'loja'"
+      :listaLivros="listaLivros" 
+      :favoritos="favoritos" 
+      />
+
+    <EmptyFavorite 
+    v-if="telaAtual === 'favoritos' && favoritos.length == 0 && inputValue.trim() === ''"
+      @voltar="telaAtual = 'loja'" />
+
+    <FooterComponent />
+
+  </body>
+
 </template>
 
 <style scoped>
-section.random {
-  margin: 2vw 11.5vw;
-}
-
-section.random .autor {
-  border: 2px solid #4a88cb;
-  width: 30%;
-  text-align: center;
-  color: #4a88cb;
-  font-size: 1.05rem;
-}
-
-section.random .titulo {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 100%;
-  margin: 2vw 0;
-}
-
-section.random .resumo {
-  width: 90%;
-
-}
-
-section.random button {
-  margin-top: 2vw;
-  background-color: #4a88cb;
-  color: white;
-  border: none;
-  padding: 0.5vw 2vw;
-  font-size: 1.1rem;
-}
-
-section.informacoes {
-  display: flex;
-  border-bottom: #4a88cb solid 2px;
-  border-top: #4a88cb solid 2px;
-  padding: 4vw 0;
-  justify-content: center;
-}
-
-section.informacoes div {
-  display: flex;
-  font-size: 1.2rem;
-  padding: 2vw;
-  align-items: center;
-}
-
-section.informacoes div p {
-  font-weight: 600;
-  margin-left: 0.6vw;
-}
-
-section.livros ul li {
-  line-height: 200%;
-  margin-top: 2VW;
-}
-
-section.livros li img:hover {
-  transform: scale(1.03);
-  transition: all 0.5s ease;
-}
-
-section.livros button {
-  background-color: #4a88cb;
-  color: white;
-  border: none;
-  padding: 0.5vw 6vw;
-  border-radius: 4px;
-}
-
-section.livros button:hover {
-  transform: scale(1.01);
-  transition: all 0.5s ease;
-  background-color: #70a1d6;
-}
-
-section.livros button.btn-adicionado {
-  background-color: #28a745;
-  padding: 0.5vw 5.5vw;
-}
-
-div.carrinho-vazio {
-  text-align: center;
-  align-items: center;
-  background-color: #70a1d63b;
-  border-radius: 10px;
-  margin: 5vw 2vw 0 2vw;
-  padding: 10vw 0;
-}
-
-div.carrinho-vazio button {
-  background-color: #4a88cb;
-  border: none;
-  font-size: 1.1rem;
-  color: white;
-  padding: 5px 20px;
-  border-radius: 5px;
-  margin-top: 1vw;
-}
-
-section.carrinho li {
-  width: 90%;
-  border-bottom: #4a88cb solid 2px;
-  margin-right: 2vw;
-}
-
-section.carrinho .titulo {
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 120%;
-}
-
-section.carrinho .autor {
-  color: #4F4C57;
-  margin-top: 0.4vw;
-  margin-bottom: 0.4vw;
-}
-
-section.carrinho .preco {
-  font-size: 1.1rem;
-  color: #4F4C57;
-  font-weight: 600;
-}
-section.carrinho .lado{
-  align-items: center;
-}
-section.carrinho .button {
-  padding: 3px 20px;
-  border: 2px solid #4F4C57;
-  margin: 0 0.5vw 0 3vw ;
-  font-size: 1.01rem;
-  font-weight: 600;
-}
-section.carrinho .lixeira{
-  border: none;
-  background-color: white;
-  font-size: 1.2rem;
-  margin-right: 5vw;
-  font-weight: 500;
-}
-section.carrinho .lixeira:hover{
-  color: #4a88cb;
-  transition: 0.5s;
-  scale: 1.1;
-}
-section.carrinho .lado {
-  width: 10%;
-  min-width: 60px;
-  text-align: left;
-}
-
-section.carrinho h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #4a88cb;
-  margin: 2vw 0 2vw 3vw;
-}
-
-section.carrinho button.paginaPrincipal {
-  background-color: #4a88cb;
-  color: white;
-  border: none;
-  padding: 5px 15px;
-  font-size: 1.03rem;
-  margin: 2vw 0 2vw 2.5vw;
-}
-section.valorTotal {
-  margin: auto;
-}
-
-section.valorTotal div.principal {
-  border: #4F4C57 solid 2px;
-  border-radius: 5px;
-  padding: 2vw;
-}
-
-section.valorTotal div.principal div {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: #4a88cb solid 2px;
-  margin-top: 2vw;
-  margin-bottom: 0.5vw;
-}
-
-section.valorTotal .espacoMaior {
-  margin-right: 10vw;
-}
-
-section.valorTotal .semBorder {
-  border: none;
-}
-
-section.valorTotal input {
-  margin: 1.5vw 1vw 0 0;
-  background-color: #dce8f5;
-  border: none;
-  padding: 7px 40px 7px 15px;
-  border-radius: 5px;
-}
-
-section.valorTotal .pagamento {
-  background-color: #4a88cb;
-  border: none;
-  color: white;
-  padding: 7px 90px;
-}
-
-section.valorTotal .button {
-  background-color: #4a88cb;
-  color: white;
-  border: none;
-  padding: 7px 20px;
-  border-radius: 5px;
-}
-
-section.favoritos {
-  margin: 3vw 12vw;
-}
-
-section.favoritos ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-section.favoritos ul li {
-  text-align: left;
-  width: 19%;
-  margin-right: 2.4vw;
-
-}
-
-section.favoritos h2 {
-  color: #4a88cb;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-left: 2.4vw;
-  margin-bottom: 2vw;
-}
-
-section.favoritos span {
-  margin-right: 0.5vw;
-}
-
-section.favoritos ul li img {
-  flex: 1 1 400px;
-  width: 250px;
-  height: 350px;
-  margin-right: 2vw;
-}
-
-section.favoritos .titulo {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin: 7px 0;
-  line-height: 120%;
-}
-
-section.favoritos .autor {
-  font-size: 0.9rem;
-  color: #4F4C57;
-  margin-bottom: 7px;
-}
-
-section.favoritos .preco {
-  font-size: 1.02rem;
-}
-
-section.favoritos button {
-  background-color: #4a88cb;
-  color: white;
-  margin-left: 2.4vw;
-  margin-top: 2vw;
-  font-size: 1.1rem;
-  border: none;
-  padding: 7px 20px;
-}
-
-section.favoritosVazio {
-  background-color: #4a88cb39;
-  text-align: center;
-  margin: 5vw;
-  padding: 10vw;
-  border-radius: 20px;
-}
-
-section.favoritosVazio p {
-  font-size: 2rem;
-  color: #4F4C57;
-  font-weight: 700;
-  margin-bottom: 1.5vw;
-  margin-top: 1vw;
-}
-
-section.favoritosVazio button {
-  background-color: #4a88cb;
-  border: none;
-  color: white;
-  padding: 7px 30px;
-  font-size: 1.04rem;
-}
-
-section.aba-livro .informacoes {
-  display: flex;
-  justify-content: space-between;
-  margin: 3vw 8vw;
-  border: #4a88cb 2px solid;
-  padding: 2vw;
-  align-items: center;
-  border-radius: 5px;
-}
-
-section.aba-livro .informacoes .resumo {
-  margin-left: 5vw;
-
-}
-
-section.aba-livro .informacoes h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-section.aba-livro .informacoes .resenha {
-  margin-top: 4.5vw;
-  margin-bottom: 6vw;
-}
-
-section.aba-livro .informacoes button {
-  background-color: #4a88cb;
-  color: white;
-  border: none;
-  padding: 0.5vw 7vw;
-  font-size: 1.05rem;
-  border-radius: 4px;
-}
-
-section.aba-livro .informacoes button:hover {
-  transform: scale(1.01);
-  transition: all 0.5s ease;
-  background-color: #70a1d6;
-}
-
-section.aba-livro .informacoes button.btn-adicionado {
-  background-color: #28a745;
-  padding: 0.5vw 5.5vw;
-}
-
-section.aba-livro .voltar {
-  margin-left: 8vw;
-  background-color: #4a88cb;
-  color: white;
-  border: none;
-  padding: 5px 60px;
-  font-size: 1.1rem;
-}
-
-div.principal-pesquisa {
-  margin: auto;
-}
-
-section.pesquisa {
-  margin: 2vw 5vw 0 8vw;
-}
-
-section.pesquisa ul {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: left;  
-}
-
-section.pesquisa ul li {
-  align-items: center;
-  width: 19%;
-  margin-bottom: 2vw;  
-   display: grid;
-}
-section.pesquisa h3{
-  width: 90%;
-  color: #4F4C57;
-  font-weight: 600;
-}
-section.pesquisa button{
-background-color: #4a88cb;
-color: white;
-border: none;
-padding: 5px 40px;
-margin: 1vw 0 1vw 0;
-}
-section.pesquisa button:hover {
-  transform: scale(1.02);
-  transition: all 0.5s ease;
-  background-color: #70a1d6;
-}
-
-section.pesquisa button.btn-adicionado {
-  background-color: #28a745;
-  padding: 5px 30px;
-}
 </style>

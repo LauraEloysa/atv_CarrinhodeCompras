@@ -138,3 +138,12 @@ main a {
     padding: 1.5vw;
     font-weight: 300;
   }
+  button{
+    cursor: pointer;
+  }
+ li{
+    list-style-type: none;
+  }
+a{
+  text-decoration: none;
+}
